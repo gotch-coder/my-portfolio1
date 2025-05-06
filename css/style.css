@@ -1,0 +1,518 @@
+@charset "utf-8";
+body {
+  margin: 0;
+  font-family: "adobe-arabic","メイリオ","ヒラギノ角ゴ ProN W3", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+p,h1,h2,h3,h4,a {
+  margin: 0;
+  color: #30353a;
+}
+a {
+  text-decoration: none;
+}
+
+#container {
+  font-size: 18px;
+}
+h2 {
+  font-size: 60px;
+  text-align: center;
+}
+.summary {
+  text-align: center;
+  margin-bottom: 50px;
+  margin-top: -5px;
+  line-height: 33px;
+  font-size: 22px;
+}
+.bg-gray {
+  background-color: #f1eac3;
+}
+.header {
+  width: 100%;
+  font-size: 35px;
+  position: absolute;
+  z-index: 999;
+}
+.header li {
+  list-style-type: none;
+}
+.header a {
+  color: #fff;
+}
+.title {
+  position: absolute;
+  left: 60px;
+  top: 6px;
+  z-index: 1;
+}
+.nav_contact {
+  display: block;
+}
+.nav_list {
+  margin: 6px 60px;
+  display: flex;
+  justify-content: flex-end;
+}
+.nav_list li:not(:first-of-type) {
+  margin-left: 30px;
+}
+
+/* topセクション全体のスタイルを設定する */
+#main {
+  width: 100%;
+  height: 550px;
+  position: relative;
+  overflow: hidden;
+}
+#main::after {
+  content: '';
+  background-color: rgba(0, 0, 0, .4);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+#main img {
+  width: 100%;
+  height: 550px;
+  object-fit: cover;
+}
+/* .slide-container {
+  width: 100%;
+  margin: 50px auto;
+  display: flex;
+  align-items: center;
+  
+  overflow: hidden;
+  flex-direction: column;
+} */
+
+#main img {
+  display: flex;
+  /* flex-direction: column; */
+  /* animation: slide-flow 5s infinite linear 1s both; */
+}
+/* .slide {
+  width: 300px;
+  object-fit: cover;
+  border: 1px solid #ddd;
+} */
+@keyframes slide-flow {
+  0% {transform: translateX(0);}
+  100% {transform: translateX(-100%);}
+}
+
+/* 画像の中央に表示する文字のスタイルを設定する */
+#main h1 {
+  font-size: 100px;
+  white-space: nowrap;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  z-index: 99;
+}
+/* Aboutセクションのスタイルを設定する */
+#about {
+  padding: 30px 60px;
+}
+#about h2 {
+  margin-bottom: 50px;
+}
+/* テキストと画像を囲むdiv要素をフレックスボックスとして扱い、テキストを左側、画像を右に配置する */
+.about-flex {
+  display: flex;
+  justify-content: space-between;
+  max-width: 960px;
+  margin: 0 auto;
+}
+/* テキストと画像の幅や余白の設定、テキストと画像のdivそれぞれにwidth50%を指定して左にテキスト、右に画像を表示 */
+.about-text-area {
+  display: inline-block;
+  width: 50%;
+  margin-right: 24px;
+  
+  max-width: 400px;
+  /* text-align: center; */
+}
+.about-text-area p {
+  /* line-height: 33px; */
+  font-size: 22px;
+  line-height: 2.0;
+}
+/* .about-text-area ul {
+  margin-top: 30px;
+  line-height: 33px;
+  padding-left: 18px;
+} */
+.about-img-area {
+  width: 50%;
+  max-width: 400px;
+}
+.about-img-area img {
+  width: 100%;
+}
+/* Serviceセクション aboutセクションより左右のマージンを広めに */
+#service {
+  padding: 30px 145px 48px;
+}
+.service-list {
+  width: 100%;
+  margin: 0 auto;
+  font-size: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+}
+.service-content {
+  width: 100%;
+}
+.service-content:not(:last-of-type) {
+  margin-right: 80px;
+}
+.service-content img {
+  width: 100px;
+  min-width: 150px;
+  margin-bottom: 22px;
+}
+.service-content img:hover {
+  opacity: 0.7;
+}
+.service-content p {
+  line-height: 25px;
+  margin: -10px 10px 0;
+}
+
+#works {
+  padding: 30px 60px 38px;
+}
+.work-list {
+  font-size: 15px;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+}
+.work-content {
+  width: 100%;
+}
+.work-content:not(:last-of-type) {
+  margin-right: 40px;
+}
+.work-content img {
+  width: 100%;
+  margin-bottom: 20px;
+}
+.work-content p {
+  line-height: 25px;
+  margin: -6px 10px 0;
+}
+
+#contact {
+  padding: 30px 300px 50px;
+}
+#contact .summary {
+  margin-bottom: 42px;
+}
+.contact-form table {
+  width: 100%;
+  margin-bottom: 40px;
+}
+.contact-form tr td:first-of-type {
+  width: 22%;
+  vertical-align: top;
+  font-size: 20px;
+}
+.contact-form tr td input,
+.contact-form tr td textarea {
+  width: 100%;
+  border: 1px solid #707070;
+  background: rgba(255, 255, 255, .5);
+}
+.btn-submit {
+  text-align: center;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"] {
+  height: 36px;
+  margin-bottom: 45px;
+  font-size: 100%;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.7);
+  font-family: "Josefin Sans", "NotoSans JP",sans-serif;
+  /* padding: 14px; */
+}
+.contact-form textarea {
+  height: 294px;
+  resize: none;
+  font-size: 100%;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.7);
+  font-family: "Josefin Sans", "NotoSans JP",sans-serif;
+}
+/* 送信ボタンのスタイル */
+.contact-form input[type="submit"] {
+  width: 200px;
+  background-color: #a98c5f;
+  color: #fff;
+  border: none;
+  font-size: 25px;
+  cursor: pointer;
+  transition: .4s;
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-family: "Josefin Sans", "NotoSans JP",sans-serif;
+}
+.contact-form input[type="submit"]:hover {
+  color: #000;
+  background-color: #fff;
+  border: 1px solid #000;
+}
+
+.footer-box {
+  background: #000;
+  padding: 24px 60px 60px;
+  position: relative;
+  text-align: center;
+}
+.footer-box li {
+  list-style-type: none;
+}
+.footer-box a,
+.footer-box p {
+  color: #fff;
+}
+.footer-box a {
+  font-size: 35px;
+}
+.footer-box p {
+  font-size: 30px;
+}
+.footer-nav {
+  display: inline-block;
+  border-bottom: 1.5px solid #fff;
+  margin-bottom: 18px;
+}
+.footer-nav ul {
+  display: flex;
+  padding: 0 20px;
+}
+.footer-nav li:not(:last-of-type) {
+  margin-right: 30px;
+}
+.copyright {
+  margin-bottom: -10px;
+}
+
+.sns-area {
+  float: right;
+}
+.sns-area img:not(:last-of-type) {
+  margin-right: 6px;
+}
+/* レスポンシブル表示 */
+@media screen and (min-width:768px) {
+  .pc_none{
+    display: none!important;
+  }
+}
+@media screen and (max-width:767px) {
+  .sp_none{
+    display: none!important;
+  }
+  #container {
+    font-size: 16px;
+  }
+  h2{
+    font-size: 50px;
+  }
+  /* これからはここから順番に追記していく */
+  .title {
+    margin: 8px 20px;
+    font-size: 30px;
+    left: 0;
+    top: 0;
+  }
+  #nav-content {
+    display: none;
+  }
+  #main {
+    height: 600px;
+  }
+  #main img {
+    height: 600px;
+  }
+  #main h1 {
+    font-size: 80px;
+    white-space: normal;
+    text-align: center;
+  }
+
+  #about {
+    padding: 30px 20px 40px;
+  }
+  #about h2 {
+    margin-bottom: 8px;
+  }
+  .about-flex {
+    /* flex-wrap: wrap; */
+    flex-direction: column;
+  }
+  .about-text-area {
+    width: 100%;
+    /* margin-right: 0; */
+    margin: 0 auto;
+  }
+  .about-text-area ul {
+    margin-top: 34px;
+    padding-left: 14px;
+  }
+  .about-img-area {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  #service {
+    padding: 26px 20px 40px;
+  }
+  #service h2 {
+    margin-bottom: 8px;
+  }
+  .service-list {
+    display: block;
+  }
+  .service-content:not(:last-of-type) {
+    margin-right: 0;
+    margin-bottom: 44px;
+  }
+
+  #works {
+    padding: 30px 20px 40px;
+  }
+  #works h2 {
+    margin-bottom: 8px;
+  }
+  .work-list {
+    display: block;
+  }
+  .work-content:not(:last-of-type) {
+    margin-right: 0;
+    margin-bottom: 36px;
+  }
+
+  #contact {
+    padding: 30px 20px 40px;
+  }
+  #contact h2 {
+    margin-bottom: 6px;
+  }
+  #contact .summary {
+    margin-bottom: 14px;
+  }
+  .contact-form table {
+    margin-bottom: 22px;
+  }
+  .contact-form table td {
+    width: 100%!important;
+    display: block;
+  }
+  .contact-form input[type="text"],
+  .contact-form input[type="email"] {
+    margin-bottom: 18px;
+    height: 46px;
+  }
+  .contact-form input[type="submit"] {
+    width: 150px;
+    font-size: 20px;
+  }
+  .footer-nav {
+    padding: 0 60px;
+    margin-bottom: 10px;
+  }
+  .footer-nav ul {
+    flex-wrap: wrap;
+    padding: 0;
+  }
+  .footer-nav li:not(:last-of-type) {
+    margin-right: 0;
+    width: 50%;
+  }
+  .footer-nav li:last-of-type {
+    width: 50%;
+  }
+  .footer-box {
+    padding: 16px 20px 60px;
+  }
+
+  .footer-box a {
+    font-size: 20px;
+  }
+  .footer-box p {
+    font-size: 18px;
+  }
+  .sns-area {
+    float: unset;
+    margin-top: 30px;
+  }
+
+}
+/* レスポンシブル表示 */
+@media screen and (min-width:768px)
+and
+(max-width:1024px)
+{
+  /* .sp_none{
+    display: none!important;
+  } */
+#nav-content {
+  display: none;
+}
+
+/* .about-flex {
+  display: flex;
+  justify-content: space-between;
+  max-width: 960px;
+  margin: 0 auto;
+} */
+/* .about-text-area {
+  display: inline-block;
+  width: 50%;
+  margin-right: 24px;
+} */
+.about-text-area p {
+  width: 100%;
+  margin: 0 30px;
+}
+/* .about-img-area {
+  width: 50%;
+  max-width: 400px;
+} */
+
+.about-img-area img {
+  width: 100%;
+  /* ↑ここが90%になっていた */
+  height: 100%;
+}
+.about {
+  display: flex;
+}
+
+.service-list {
+  justify-content: center;
+  align-items: center;
+}
+#contact {
+  padding: 30px 100px 50px;
+}
+.contact-form table td {
+  width: 100%!important;
+  display: block;
+}
+
+}
