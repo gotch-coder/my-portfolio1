@@ -1,10 +1,18 @@
 @charset "utf-8";
+
+html {
+  font-size: 20px;
+}
+
 body {
   margin: 0;
-  font-family: "adobe-arabic","メイリオ","ヒラギノ角ゴ ProN W3", sans-serif;
+  font-family: "Yu Gothic", serif;
+  /* font-family: "adobe-arabic","メイリオ","ヒラギノ角ゴ ProN W3", sans-serif; */
   font-weight: 400;
   font-style: normal;
+  color: #000;
 }
+
 p,h1,h2,h3,h4,a {
   margin: 0;
   color: #30353a;
@@ -31,13 +39,42 @@ h2 {
   background-color: #f1eac3;
 }
 .header {
+  position: fixed;
   width: 100%;
   font-size: 35px;
-  position: absolute;
+  /* position: absolute; */
   z-index: 999;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.header__bg {
+  padding: 30px;
+}
+.header a {
+  font-family: cursive;
 }
 .header li {
   list-style-type: none;
+}
+.header li span {
+  position: relative;
+}
+.header li span:after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  /* display: block; */
+  width: 0;
+  height:1px;
+  background: #fff;
+  opacity: 0;
+  transition: all .4s cubic-bezier(.19,1,.22,1);
+  transition-timing-function: cubic-bezier(.19,1,.22,1);
+}
+.header li:hover span:after {
+  left: 0;
+  width: 100%;
+  opacity: 1;
 }
 .header a {
   color: #fff;
@@ -117,6 +154,9 @@ h2 {
   transform: translateY(-50%) translateX(-50%);
   -webkit-transform: translateY(-50%) translateX(-50%);
   z-index: 99;
+  font-family: fantasy;
+  font-size: 3rem;
+  font-weight: bold;
 }
 /* Aboutセクションのスタイルを設定する */
 #about {
