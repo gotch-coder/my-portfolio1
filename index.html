@@ -10,8 +10,6 @@
     <link rel="stylesheet" href="https://use.typekit.net/mzd4mgp.css">
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <!-- <link rel="stylesheet" type="text/css" href="css/slick.css">
-    <link rel="stylesheet" type="text/css" href="css/slick-theme.css"> -->
     <meta name="robot" content="noindex">
     <link rel="icon" type="images/png" href="images/ブラウザウィンドウのアイコン.png">
     <!-- OGP設定 -->
@@ -32,21 +30,31 @@
 
       <header class="header">
         <div class="header__bg">
-          <a href="#" class="nav_btn title">My Portfolio</a>
-          <div id="nav-content">
-            <nav class="header_nav">
-              <ul class="nav_list">
+          <a href="#" class="navi__btn title">My Portfolio</a>
+
+          <!-- <input type="checkbox" id="hamburger"> -->
+          <label for="hamburger">
+            <span class="hamburger__icon">
+              <i></i>
+              <i></i>
+              <i></i>
+            </span>
+          </label>
+
+          <div id="navi__content">
+            <nav class="header__navi">
+              <ul class="navi__list">
                 <li>
                   <a href="#about" class="nav_btn">About</a>
                 </li>
                 <li>
-                  <a href="#service" class="nav_btn">Service</a>
+                  <a href="#service" class="navi__btn">Service</a>
                 </li>
                 <li>
-                  <a href="#works" class="nav_btn">Works</a>
+                  <a href="#works" class="navi__btn">Works</a>
                 </li>
                 <li>
-                  <a href="#contact" class="nav_btn">Contact</a>
+                  <a href="#contact" class="navi__btn">Contact</a>
                 </li>
               </ul>
             </nav>
@@ -88,17 +96,11 @@
           <img src="images/240316180731150.JPG" class="pc_none" alt="about_img">
         </div>
         <div class="about-text-area">
-          <p>Hiroki Gotoh / 後藤 広樹<br>1978年生まれ。<br>大学卒業後、協同組合、工場勤務、商社勤務を経て、<br>2024年3月、
-            CodeFreeに出会い、Web制作の道へ。<br>
+          <p>Hiroki Gotoh / <br>1978年生まれ。<br>大学卒業後、協同組合、工場勤務、商社勤務を経て、<br>2024年3月、
+            Web制作の道へ。<br>
             様々な職種で経験したことを活かして、お客様のご要望に
             応えてまいります。よろしくお願いいたします。
             </p>
-            <!-- <ul>
-              <li>テキストテキストテキストテキストテキストテキスト</li>
-              <li>テキストテキストテキストテキストテキストテキスト</li>
-              <li>テキストテキストテキストテキストテキストテキスト</li>
-              <li>テキストテキストテキストテキストテキストテキスト</li>
-            </ul> -->
         </div>
       </div>
     </section>
@@ -152,7 +154,7 @@
         </div>
       </div>
     </section>
-    
+
     <section id="contact">
       <h2>Contact</h2>
       <p class="summary">お気軽にお問い合わせください。<br>24時間以内に担当者よりご連絡させて頂きます。</p>
