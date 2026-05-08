@@ -14,9 +14,7 @@ h1,h2,h3,h4,p,ul,a {
   margin: 0;
   padding: 0;
 }
-/* a {
-  text-decoration: none;
-} */
+
  ul,ol {
   list-style: none;
  }
@@ -27,6 +25,21 @@ h1,h2,h3,h4,p,ul,a {
 h2 {
   font-size: 60px;
   text-align: center;
+  font-family: fantasy;
+  font-weight: bold;
+  text-align: center;
+  position: relative;
+  margin-bottom: 70px;
+}
+h2::after {
+  content: '';
+  position: absolute;
+  transform: translateX(-50%);
+  bottom: 0;
+  left: 50%;
+  width: 20px;
+  height: 2px;
+  border-bottom: 2px solid;
 }
 .summary {
   text-align: center;
@@ -34,6 +47,7 @@ h2 {
   margin-top: -5px;
   line-height: 33px;
   font-size: 22px;
+  font-family: cursive;
 }
 .bg-gray {
   background-color: #f1eac3;
@@ -135,9 +149,6 @@ h2 {
   object-fit: cover;
 }
 
-/* #main img {
-  display: flex;
-} */
 
 @keyframes slide-flow {
   0% {transform: translateX(0);}
@@ -221,6 +232,7 @@ h2 {
 }
 .service-content {
   width: 100%;
+  font-family: cursive;
 }
 .service-content:not(:last-of-type) {
   margin-right: 80px;
@@ -271,6 +283,7 @@ h2 {
 .contact-form table {
   width: 100%;
   margin-bottom: 40px;
+  font-family: cursive;
 }
 .contact-form tr td:first-of-type {
   width: 22%;
@@ -294,7 +307,8 @@ h2 {
   font-size: 100%;
   border-radius: 8px;
   background-color: rgba(255, 255, 255, 0.7);
-  font-family: "Josefin Sans", "NotoSans JP",sans-serif;
+  font-family: cursive;
+  /* font-family: "Josefin Sans", "NotoSans JP",sans-serif; */
 }
 .contact-form textarea {
   height: 294px;
@@ -302,7 +316,8 @@ h2 {
   font-size: 100%;
   border-radius: 8px;
   background-color: rgba(255, 255, 255, 0.7);
-  font-family: "Josefin Sans", "NotoSans JP",sans-serif;
+  font-family: cursive;
+  /* font-family: "Josefin Sans", "NotoSans JP",sans-serif; */
 }
 /* 送信ボタンのスタイル */
 .contact-form input[type="submit"] {
@@ -315,7 +330,8 @@ h2 {
   transition: .4s;
   border-radius: 8px;
   padding: 6px 10px;
-  font-family: "Josefin Sans", "NotoSans JP",sans-serif;
+  font-family: cursive;
+  /* font-family: "Josefin Sans", "NotoSans JP",sans-serif; */
 }
 .contact-form input[type="submit"]:hover {
   color: #000;
@@ -341,27 +357,44 @@ h2 {
 }
 .footer-box p {
   font-size: 30px;
+  font-family: cursive;
 }
 .footer-nav {
   display: inline-block;
   border-bottom: 1.5px solid #fff;
   margin-bottom: 18px;
+  font-family: cursive;
 }
 .footer-nav ul {
   display: flex;
+  justify-content: center;
+  gap: 30px;
   padding: 0 20px;
+  margin-bottom: 20px;
+  list-style: none;
 }
 .footer-nav li:not(:last-of-type) {
   margin-right: 30px;
 }
 .copyright {
-  margin-bottom: -10px;
+  margin-bottom: 20px;
 }
 
 .sns-area {
-  float: right;
+  margin-top: 40px;
+  display: flex;
+  font-family: fantasy;
+  justify-content: center;
+  gap: 6px;
+  align-items: center;
 }
-.sns-area img:not(:last-of-type) {
+.sns-area img{
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  vertical-align: middle;
+}
+.sns-area a:not(:last-of-type) {
   margin-right: 6px;
 }
 /* レスポンシブ表示 */
