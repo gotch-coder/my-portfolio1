@@ -1,5 +1,9 @@
 @charset "utf-8";
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: "Yu Gothic", serif;
@@ -46,7 +50,7 @@ h2::after {
   margin-bottom: 50px;
   margin-top: -5px;
   line-height: 33px;
-  font-size: 22px;
+  font-size: 25px;
   font-family: cursive;
 }
 .bg-gray {
@@ -55,6 +59,13 @@ h2::after {
 :root {
   --header-height: 115px;
 }
+#about,
+#service,
+#works,
+#contact {
+  scroll-margin-top: var(--header-height);
+}
+
 .header {
   position: fixed;
   width: 100%;
@@ -172,7 +183,7 @@ h2::after {
 }
 /* Aboutセクションのスタイルを設定する */
 #about {
-  padding: 50px 60px;
+  padding: 70px 70px;
 }
 #about h2 {
   margin-bottom: 70px;
@@ -193,36 +204,36 @@ h2::after {
   /* transition: all .4s cubic-bezier(.19,1,.22,1); */
 }
 /* テキストと画像を囲むdiv要素をフレックスボックスとして扱い、テキストを左側、画像を右に配置する */
-.about-flex {
+.about__flex {
   display: flex;
   justify-content: space-between;
   max-width: 960px;
   margin: 0 auto;
 }
 /* テキストと画像の幅や余白の設定、テキストと画像のdivそれぞれにwidth50%を指定して左にテキスト、右に画像を表示 */
-.about-text-area {
+.about__textarea {
   display: inline-block;
   width: 50%;
   margin-right: 24px;
   max-width: 400px;
 }
-.about-text-area p {
+.about__textarea p {
   font-family: cursive;
   font-size: 22px;
   line-height: 2.0;
 }
-.about-img-area {
+.about__img {
   width: 50%;
   max-width: 400px;
 }
-.about-img-area img {
+.about__img img {
   width: 100%;
 }
 /* Serviceセクション aboutセクションより左右のマージンを広めに */
 #service {
-  padding: 30px 145px 48px;
+  padding: 70px 70px;
 }
-.service-list {
+.service__list {
   width: 100%;
   margin: 0 auto;
   font-size: 20px;
@@ -230,78 +241,82 @@ h2::after {
   display: flex;
   justify-content: space-between;
 }
-.service-content {
+.service__content {
   width: 100%;
   font-family: cursive;
 }
-.service-content:not(:last-of-type) {
+.service__content:not(:last-of-type) {
   margin-right: 80px;
 }
-.service-content img {
+.service__content img {
   width: 100px;
   min-width: 150px;
   margin-bottom: 22px;
 }
-.service-content img:hover {
+.service__content img:hover {
   opacity: 0.7;
 }
-.service-content p {
+.service__content p {
   line-height: 25px;
   margin: -10px 10px 0;
 }
 
 #works {
-  padding: 30px 60px 38px;
+  padding: 70px 70px;
 }
-.work-list {
+.work__list {
   font-size: 15px;
   text-align: center;
   display: flex;
   justify-content: space-between;
 }
-.work-content {
+.work__content {
   width: 100%;
 }
-.work-content:not(:last-of-type) {
+.work__content:not(:last-of-type) {
   margin-right: 40px;
 }
-.work-content img {
+.work__content img {
   width: 100%;
   margin-bottom: 20px;
 }
-.work-content p {
+.work__content p {
   line-height: 25px;
   margin: -6px 10px 0;
+  font-family: cursive;
+  font-size: 20px;
 }
 
 #contact {
-  padding: 30px 300px 50px;
+  /* padding: 30px 300px 50px; */
+  /* padding: 70px 300px 70px; */
+  padding: 70px 200px 70px;
 }
 #contact .summary {
   margin-bottom: 42px;
 }
-.contact-form table {
+.contact__form table {
   width: 100%;
   margin-bottom: 40px;
   font-family: cursive;
 }
-.contact-form tr td:first-of-type {
+.contact__form tr td:first-of-type {
   width: 22%;
   vertical-align: top;
   font-size: 20px;
 }
-.contact-form tr td input,
-.contact-form tr td textarea {
+.contact__form tr td input,
+.contact__form tr td textarea {
   width: 100%;
   border: 1px solid #707070;
   background: rgba(255, 255, 255, .5);
 }
-.btn-submit {
+.btn__submit {
   text-align: center;
 }
 
-.contact-form input[type="text"],
-.contact-form input[type="email"] {
+.contact__form input[type="text"],
+.contact__form input[type="email"] {
   height: 36px;
   margin-bottom: 45px;
   font-size: 100%;
@@ -310,7 +325,7 @@ h2::after {
   font-family: cursive;
   /* font-family: "Josefin Sans", "NotoSans JP",sans-serif; */
 }
-.contact-form textarea {
+.contact__form textarea {
   height: 294px;
   resize: none;
   font-size: 100%;
@@ -320,52 +335,60 @@ h2::after {
   /* font-family: "Josefin Sans", "NotoSans JP",sans-serif; */
 }
 /* 送信ボタンのスタイル */
-.contact-form input[type="submit"] {
+.contact__form input[type="submit"] {
   width: 200px;
   background-color: #a98c5f;
   color: #fff;
   border: none;
   font-size: 25px;
   cursor: pointer;
-  transition: .4s;
+  transition: all .8s ease-in-out;
+  border: 1px solid transparent;
   border-radius: 8px;
   padding: 6px 10px;
   font-family: cursive;
+  height: 60px;
+  line-height: 60px;
+  padding: 0;
   /* font-family: "Josefin Sans", "NotoSans JP",sans-serif; */
 }
-.contact-form input[type="submit"]:hover {
+.contact__form input[type="submit"]:hover {
   color: #000;
   background-color: #fff;
   border: 1px solid #000;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, .2);
 }
 
-.footer-box {
+/* フッター */
+.footer__box {
   background: #000;
-  padding: 24px 60px 60px;
+  /* padding: 24px 60px 60px; */
+  padding: 70px 70px;
   position: relative;
   text-align: center;
 }
-.footer-box li {
+.footer__box li {
   list-style-type: none;
 }
-.footer-box a,
-.footer-box p {
+.footer__box a,
+.footer__box p {
   color: #fff;
 }
-.footer-box a {
+.footer__box a {
   font-size: 35px;
 }
-.footer-box p {
+.footer__box p {
   font-size: 30px;
   font-family: cursive;
 }
-.footer-nav {
+.footer__nav {
   display: inline-block;
   border-bottom: 1.5px solid #fff;
   margin-bottom: 18px;
   font-family: cursive;
 }
-.footer-nav ul {
+.footer__nav ul {
   display: flex;
   justify-content: center;
   gap: 30px;
@@ -373,14 +396,14 @@ h2::after {
   margin-bottom: 20px;
   list-style: none;
 }
-.footer-nav li:not(:last-of-type) {
+.footer__nav li:not(:last-of-type) {
   margin-right: 30px;
 }
 .copyright {
   margin-bottom: 20px;
 }
 
-.sns-area {
+.sns__area {
   margin-top: 40px;
   display: flex;
   font-family: fantasy;
@@ -388,13 +411,13 @@ h2::after {
   gap: 6px;
   align-items: center;
 }
-.sns-area img{
+.sns__area img{
   width: 32px;
   height: 32px;
   object-fit: contain;
   vertical-align: middle;
 }
-.sns-area a:not(:last-of-type) {
+.sns__area a:not(:last-of-type) {
   margin-right: 6px;
 }
 /* レスポンシブ表示 */
@@ -496,15 +519,15 @@ h2::after {
     /* flex-wrap: wrap; */
     flex-direction: column;
   }
-  .about-text-area {
+  .about__textarea {
     width: 100%;
     margin: 0 auto;
   }
-  .about-text-area ul {
+  .about__textarea ul {
     margin-top: 34px;
     padding-left: 14px;
   }
-  .about-img-area {
+  .about__imgarea {
     width: 100%;
     margin: 0 auto;
   }
@@ -515,10 +538,10 @@ h2::after {
   #service h2 {
     margin-bottom: 8px;
   }
-  .service-list {
+  .service__list {
     display: block;
   }
-  .service-content:not(:last-of-type) {
+  .service__content:not(:last-of-type) {
     margin-right: 0;
     margin-bottom: 44px;
   }
@@ -529,10 +552,10 @@ h2::after {
   #works h2 {
     margin-bottom: 8px;
   }
-  .work-list {
+  .work__list {
     display: block;
   }
-  .work-content:not(:last-of-type) {
+  .work__content:not(:last-of-type) {
     margin-right: 0;
     margin-bottom: 36px;
   }
@@ -546,48 +569,48 @@ h2::after {
   #contact .summary {
     margin-bottom: 14px;
   }
-  .contact-form table {
+  .contact__form table {
     margin-bottom: 22px;
   }
-  .contact-form table td {
+  .contact__form table td {
     width: 100%!important;
     display: block;
   }
-  .contact-form input[type="text"],
-  .contact-form input[type="email"] {
+  .contact__form input[type="text"],
+  .contact__form input[type="email"] {
     margin-bottom: 18px;
     height: 46px;
   }
-  .contact-form input[type="submit"] {
+  .contact__form input[type="submit"] {
     width: 150px;
     font-size: 20px;
   }
-  .footer-nav {
+  .footer__nav {
     padding: 0 60px;
     margin-bottom: 10px;
   }
-  .footer-nav ul {
+  .footer__nav ul {
     flex-wrap: wrap;
     padding: 0;
   }
-  .footer-nav li:not(:last-of-type) {
+  .footer__nav li:not(:last-of-type) {
     margin-right: 0;
     width: 50%;
   }
-  .footer-nav li:last-of-type {
+  .footer__nav li:last-of-type {
     width: 50%;
   }
-  .footer-box {
+  .footer__box {
     padding: 16px 20px 60px;
   }
 
-  .footer-box a {
+  .footer__box a {
     font-size: 20px;
   }
-  .footer-box p {
+  .footer__box p {
     font-size: 18px;
   }
-  .sns-area {
+  .sns__area {
     float: unset;
     margin-top: 30px;
   }
@@ -598,37 +621,37 @@ h2::after {
 and
 (max-width:1024px)
 {
-  /* .sp_none{
-    display: none!important;
-  } */
-#nav-content {
-  display: none;
-}
+    /* .sp_none{
+      display: none!important;
+    } */
+  #nav-content {
+    display: none;
+  }
 
-.about-text-area p {
-  width: 100%;
-  margin: 0 30px;
-}
+  .about__textarea p {
+    width: 100%;
+    margin: 0 30px;
+  }
 
-.about-img-area img {
-  width: 100%;
-  /* ↑ここが90%になっていた */
-  height: 100%;
-}
-.about {
-  display: flex;
-}
+  .about__img img {
+    width: 100%;
+    /* ↑ここが90%になっていた */
+    height: 100%;
+  }
+  .about {
+    display: flex;
+  }
 
-.service-list {
-  justify-content: center;
-  align-items: center;
-}
-#contact {
-  padding: 30px 100px 50px;
-}
-.contact-form table td {
-  width: 100%!important;
-  display: block;
-}
+  .service__list {
+    justify-content: center;
+    align-items: center;
+  }
+  #contact {
+    padding: 70px 100px 70px;
+  }
+  .contact__form table td {
+    width: 100%!important;
+    display: block;
+  }
 
 }
