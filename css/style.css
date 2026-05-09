@@ -19,16 +19,24 @@ h1,h2,h3,h4,p,ul,a {
   padding: 0;
 }
 
- ul,ol {
+ul,ol {
   list-style: none;
- }
+}
+.section {
+  padding: 70px 0;
+}
 
 #container {
   font-size: 18px;
 }
+.inner {
+  width: min(100%, 1100px);
+  margin: 0 auto;
+  padding-inline: 30px;
+  box-sizing: border-box;
+}
 h2 {
   font-size: 60px;
-  text-align: center;
   font-family: fantasy;
   font-weight: bold;
   text-align: center;
@@ -73,16 +81,13 @@ h2::after {
   left: 0;
   font-size: 35px;
   z-index: 999;
-  height: var(--header-height);
   background-color: rgba(0, 0, 0, 0.5);
 }
 .header__bg {
-  /* padding: 30px 0; */
+  height: var(--header-height);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100%;
-  padding: 0 0 0 60px;
 }
 .header a {
   font-family: cursive;
@@ -119,23 +124,17 @@ h2::after {
   color: #fff;
 }
 .title {
-  position: absolute;
-  left: 60px;
-  top: 50%;
-  transform: translateY(-50%);
   z-index: 1;
 }
 .nav_contact {
   display: block;
 }
 .navi__list {
-  margin: 6px 60px;
+  margin: 0;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-}
-.navi__list li:not(:first-of-type) {
-  margin-left: 30px;
+  gap: 30px;
 }
 
 /* topセクション全体のスタイルを設定する */
@@ -182,9 +181,6 @@ h2::after {
   font-weight: bold;
 }
 /* Aboutセクションのスタイルを設定する */
-#about {
-  padding: 70px 70px;
-}
 #about h2 {
   margin-bottom: 70px;
   font-family: fantasy;
@@ -206,15 +202,14 @@ h2::after {
 /* テキストと画像を囲むdiv要素をフレックスボックスとして扱い、テキストを左側、画像を右に配置する */
 .about__flex {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   max-width: 960px;
   margin: 0 auto;
+  gap: clamp(20px, 5vw, 60px);
 }
 /* テキストと画像の幅や余白の設定、テキストと画像のdivそれぞれにwidth50%を指定して左にテキスト、右に画像を表示 */
 .about__textarea {
-  display: inline-block;
   width: 50%;
-  margin-right: 24px;
   max-width: 400px;
 }
 .about__textarea p {
@@ -229,10 +224,8 @@ h2::after {
 .about__img img {
   width: 100%;
 }
-/* Serviceセクション aboutセクションより左右のマージンを広めに */
-#service {
-  padding: 70px 70px;
-}
+
+/* サービス */
 .service__list {
   width: 100%;
   margin: 0 auto;
@@ -261,9 +254,6 @@ h2::after {
   margin: -10px 10px 0;
 }
 
-#works {
-  padding: 70px 70px;
-}
 .work__list {
   font-size: 15px;
   text-align: center;
@@ -273,12 +263,20 @@ h2::after {
 .work__content {
   width: 100%;
 }
+.work__content a {
+  display: block;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
 .work__content:not(:last-of-type) {
   margin-right: 40px;
 }
 .work__content img {
   width: 100%;
-  margin-bottom: 20px;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 .work__content p {
   line-height: 25px;
@@ -287,10 +285,9 @@ h2::after {
   font-size: 20px;
 }
 
-#contact {
-  /* padding: 30px 300px 50px; */
-  /* padding: 70px 300px 70px; */
-  padding: 70px 200px 70px;
+.contact__form {
+  max-width: 700px;
+  margin: 0 auto;
 }
 #contact .summary {
   margin-bottom: 42px;
@@ -361,12 +358,14 @@ h2::after {
 }
 
 /* フッター */
+.footer {
+  background: #333;
+}
 .footer__box {
-  background: #000;
-  /* padding: 24px 60px 60px; */
-  padding: 70px 70px;
+  padding: 30px 70px;
   position: relative;
   text-align: center;
+  border-top: 1px solid #333;
 }
 .footer__box li {
   list-style-type: none;
@@ -387,6 +386,15 @@ h2::after {
   border-bottom: 1.5px solid #fff;
   margin-bottom: 18px;
   font-family: cursive;
+}
+.footer__nav a {
+  
+  transition: opacity .4s ease-in-out,
+              color .4s ease-in-out;
+}
+.footer__nav a:hover {
+  color: rgba(255, 255, 255, 0.7);
+  opacity: 0.7;
 }
 .footer__nav ul {
   display: flex;
@@ -410,6 +418,14 @@ h2::after {
   justify-content: center;
   gap: 6px;
   align-items: center;
+}
+.sns__area a {
+  transition: opacity .4s ease-in-out,
+              transform .4s ease-in-out;
+}
+.sns__area a:hover {
+  opacity: 0.7;
+  transform: translateY(-2px);
 }
 .sns__area img{
   width: 32px;
@@ -440,10 +456,8 @@ h2::after {
     font-size: 50px;
   }
   .title {
-    margin: 8px 20px;
+    margin: 0;
     font-size: 30px;
-    left: 0;
-    top: 0;
   }
   /* ハンバーガーメニューここから */
   span.hamburger__icon {
@@ -513,7 +527,7 @@ h2::after {
     padding: 30px 20px 40px;
   }
   #about h2 {
-    margin-bottom: 8px;
+    margin-bottom: 30px;
   }
   .about-flex {
     /* flex-wrap: wrap; */
@@ -550,7 +564,7 @@ h2::after {
     padding: 30px 20px 40px;
   }
   #works h2 {
-    margin-bottom: 8px;
+    margin-bottom: 30px;
   }
   .work__list {
     display: block;
