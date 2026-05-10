@@ -32,7 +32,7 @@ ul,ol {
 .inner {
   width: min(100%, 1100px);
   margin: 0 auto;
-  padding-inline: 30px;
+  padding-inline: 40px;
   box-sizing: border-box;
 }
 h2 {
@@ -225,7 +225,7 @@ h2::after {
   width: 100%;
 }
 
-/* サービス */
+/* サービスコンテンツ */
 .service__list {
   width: 100%;
   margin: 0 auto;
@@ -254,6 +254,7 @@ h2::after {
   margin: -10px 10px 0;
 }
 
+/* Workコンテンツ */
 .work__list {
   font-size: 15px;
   text-align: center;
@@ -280,11 +281,12 @@ h2::after {
 }
 .work__content p {
   line-height: 25px;
-  margin: -6px 10px 0;
+  margin: 20px 10px;
   font-family: cursive;
   font-size: 20px;
 }
 
+/* contactフォームコンテンツ */
 .contact__form {
   max-width: 700px;
   margin: 0 auto;
@@ -357,7 +359,7 @@ h2::after {
   box-shadow: 0 4px 10px rgba(0, 0, 0, .2);
 }
 
-/* フッター */
+/* フッターコンテンツ */
 .footer {
   background: #333;
 }
@@ -442,7 +444,7 @@ h2::after {
     display: none!important;
   }
 }
-@media screen and (max-width:768px) {
+@media screen and (max-width:767px) {
   .sp_none{
     display: none!important;
   }
@@ -460,7 +462,8 @@ h2::after {
     font-size: 30px;
   }
   /* ハンバーガーメニューここから */
-  span.hamburger__icon {
+
+  /* span.hamburger__icon {
     display: inline-block;
     width: 35px;
     height: 25px;
@@ -492,7 +495,9 @@ h2::after {
     top: 0;
     right: 0;
     bottom: 0;
-  }
+  } */
+
+  /* ヘッダースタイル */
   .header__navi {
     position: fixed;
     opacity: 0;
@@ -523,32 +528,33 @@ h2::after {
     text-align: center;
   }
 
-  #about {
-    padding: 30px 20px 40px;
+  /* 各セクションのスタイルを設定する  */
+  .section {
+  padding: 70px 0;
   }
+
+  /* Aboutセクション */
+  
   #about h2 {
     margin-bottom: 30px;
   }
-  .about-flex {
-    /* flex-wrap: wrap; */
+  .about__flex {
     flex-direction: column;
+    align-items: center;
   }
+  .about__img,
   .about__textarea {
     width: 100%;
-    margin: 0 auto;
+    max-width: 100%;
   }
   .about__textarea ul {
     margin-top: 34px;
     padding-left: 14px;
   }
-  .about__imgarea {
-    width: 100%;
-    margin: 0 auto;
-  }
 
-  #service {
-    padding: 26px 20px 40px;
-  }
+
+  /* Serviceセクション */
+
   #service h2 {
     margin-bottom: 8px;
   }
@@ -560,9 +566,8 @@ h2::after {
     margin-bottom: 44px;
   }
 
-  #works {
-    padding: 30px 20px 40px;
-  }
+  /* Worksセクション */
+
   #works h2 {
     margin-bottom: 30px;
   }
@@ -574,14 +579,13 @@ h2::after {
     margin-bottom: 36px;
   }
 
-  #contact {
-    padding: 30px 20px 40px;
-  }
+  /* Contactセクション */
+
   #contact h2 {
-    margin-bottom: 6px;
+    margin-bottom: 50px;
   }
   #contact .summary {
-    margin-bottom: 14px;
+    margin-bottom: 50px;
   }
   .contact__form table {
     margin-bottom: 22px;
@@ -589,6 +593,7 @@ h2::after {
   .contact__form table td {
     width: 100%!important;
     display: block;
+    margin-bottom: 15px;
   }
   .contact__form input[type="text"],
   .contact__form input[type="email"] {
@@ -599,20 +604,32 @@ h2::after {
     width: 150px;
     font-size: 20px;
   }
+
+  /* footerセクション */
   .footer__nav {
-    padding: 0 60px;
-    margin-bottom: 10px;
+    padding: 15px 60px;
+    margin-bottom: 20px;
+    display: block;
+  }
+  .footer__nav a {
+    display: block;
   }
   .footer__nav ul {
     flex-wrap: wrap;
+    display: flex;
     padding: 0;
+    margin: 0;
+    gap: 0;
+  }
+  .footer__nav li {
+    width: 50%;
+    margin-bottom: 12px;
   }
   .footer__nav li:not(:last-of-type) {
     margin-right: 0;
-    width: 50%;
   }
-  .footer__nav li:last-of-type {
-    width: 50%;
+  .footer__nav li:nth-last-child(-n + 2) {
+    margin-bottom: 0;
   }
   .footer__box {
     padding: 16px 20px 60px;
@@ -632,28 +649,29 @@ h2::after {
 }
 /* レスポンシブル表示 */
 @media screen and (min-width:768px)
-and
-(max-width:1024px)
+and (max-width:1024px)
 {
-    /* .sp_none{
-      display: none!important;
-    } */
+
   #nav-content {
     display: none;
   }
 
-  .about__textarea p {
-    width: 100%;
-    margin: 0 30px;
+  .about__textarea {
+    padding: 0 30px;
   }
 
   .about__img img {
     width: 100%;
     /* ↑ここが90%になっていた */
-    height: 100%;
+    height: auto;
+    display: block;
   }
-  .about {
+  .about__flex {
     display: flex;
+  }
+  .about__img,
+  .about__textarea {
+    width: 50%;
   }
 
   .service__list {
