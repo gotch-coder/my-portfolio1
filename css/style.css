@@ -6,7 +6,8 @@ html {
 
 body {
   margin: 0;
-  font-family: "Yu Gothic", serif;
+  font-family: "Noto Sans JP", sans-serif;
+  /* font-family: "Yu Gothic", serif; */
   font-weight: 400;
   font-style: normal;
   color: #000;
@@ -37,7 +38,8 @@ ul,ol {
 }
 h2 {
   font-size: 60px;
-  font-family: fantasy;
+  /* font-family: fantasy; */
+  font-family: "Anton", sans-serif;
   font-weight: bold;
   text-align: center;
   position: relative;
@@ -59,7 +61,8 @@ h2::after {
   margin-top: -5px;
   line-height: 33px;
   font-size: 25px;
-  font-family: cursive;
+  font-family: "Pacifico", cursive;
+  /* font-family: cursive; */
 }
 .bg-gray {
   background-color: #f1eac3;
@@ -90,7 +93,9 @@ h2::after {
   justify-content: space-between;
 }
 .header a {
-  font-family: cursive;
+  /* font-family: cursive; */
+  font-family: "Anton", sans-serif;
+  /* font-family: "Pacifico", cursive; */
   transition: all .4s ease-in-out;
 }
 .header a:hover {
@@ -176,14 +181,15 @@ h2::after {
   transform: translateY(-50%) translateX(-50%);
   -webkit-transform: translateY(-50%) translateX(-50%);
   z-index: 99;
-  font-family: fantasy;
+  font-family: "Anton", sans-serif;
+  /* font-family: fantasy; */
   font-size: 3rem;
   font-weight: bold;
 }
 /* Aboutセクションのスタイルを設定する */
 #about h2 {
   margin-bottom: 70px;
-  font-family: fantasy;
+  /* font-family: fantasy; */
   position: relative;
   font-weight: bold;
   text-align: center;
@@ -213,7 +219,8 @@ h2::after {
   max-width: 400px;
 }
 .about__textarea p {
-  font-family: cursive;
+  /* font-family: "Pacifico", cursive; */
+   font-family: "Noto Sans JP", sans-serif;
   font-size: 22px;
   line-height: 2.0;
 }
@@ -236,7 +243,8 @@ h2::after {
 }
 .service__content {
   width: 100%;
-  font-family: cursive;
+  font-family: "Noto Sans JP", sans-serif;
+  /* font-family: "Pacifico", cursive; */
 }
 .service__content:not(:last-of-type) {
   margin-right: 80px;
@@ -282,7 +290,8 @@ h2::after {
 .work__content p {
   line-height: 25px;
   margin: 20px 10px;
-  font-family: cursive;
+  font-family: "Noto Sans JP", sans-serif;
+  /* font-family: "Pacifico", cursive; */
   font-size: 20px;
 }
 
@@ -297,7 +306,7 @@ h2::after {
 .contact__form table {
   width: 100%;
   margin-bottom: 40px;
-  font-family: cursive;
+  font-family: "Noto Sans JP", sans-serif;
 }
 .contact__form tr td:first-of-type {
   width: 22%;
@@ -321,7 +330,8 @@ h2::after {
   font-size: 100%;
   border-radius: 8px;
   background-color: rgba(255, 255, 255, 0.7);
-  font-family: cursive;
+  /* font-family: "Pacifico", cursive; */
+   font-family: "Noto Sans JP", sans-serif;
   /* font-family: "Josefin Sans", "NotoSans JP",sans-serif; */
 }
 .contact__form textarea {
@@ -330,7 +340,8 @@ h2::after {
   font-size: 100%;
   border-radius: 8px;
   background-color: rgba(255, 255, 255, 0.7);
-  font-family: cursive;
+  /* font-family: "Pacifico", cursive; */
+   font-family: "Noto Sans JP", sans-serif;
   /* font-family: "Josefin Sans", "NotoSans JP",sans-serif; */
 }
 /* 送信ボタンのスタイル */
@@ -345,7 +356,8 @@ h2::after {
   border: 1px solid transparent;
   border-radius: 8px;
   padding: 6px 10px;
-  font-family: cursive;
+  /* font-family: "Pacifico", cursive; */
+   font-family: "Noto Sans JP", sans-serif;
   height: 60px;
   line-height: 60px;
   padding: 0;
@@ -381,13 +393,17 @@ h2::after {
 }
 .footer__box p {
   font-size: 30px;
-  font-family: cursive;
+  font-family: "Noto Sans JP", sans-serif;
+  /* font-family: "Pacifico", cursive; */
 }
 .footer__nav {
   display: inline-block;
   border-bottom: 1.5px solid #fff;
   margin-bottom: 18px;
-  font-family: cursive;
+  /* font-family: "Pacifico", cursive; */
+  /* font-family: cursive; */
+  /* font-family: "Noto Sans JP", sans-serif; */
+  font-family: "Anton", sans-serif;
 }
 .footer__nav a {
   
@@ -416,7 +432,8 @@ h2::after {
 .sns__area {
   margin-top: 40px;
   display: flex;
-  font-family: fantasy;
+  /* font-family: fantasy; */
+  font-family: "Anton", sans-serif;
   justify-content: center;
   gap: 6px;
   align-items: center;
@@ -536,8 +553,9 @@ h2::after {
   /* Aboutセクション */
   
   #about h2 {
-    margin-bottom: 30px;
+    margin-bottom: 50px;
   }
+  
   .about__flex {
     flex-direction: column;
     align-items: center;
@@ -556,7 +574,7 @@ h2::after {
   /* Serviceセクション */
 
   #service h2 {
-    margin-bottom: 8px;
+    margin-bottom: 50px;
   }
   .service__list {
     display: block;
@@ -569,7 +587,7 @@ h2::after {
   /* Worksセクション */
 
   #works h2 {
-    margin-bottom: 30px;
+    margin-bottom: 50px;
   }
   .work__list {
     display: block;
