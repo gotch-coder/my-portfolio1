@@ -7,6 +7,9 @@
     <title>My Portfolio</title>
     <meta name="description" content="Web制作始めました。皆様のご要望に応えてまいります。お気軽にお問い合わせください。">
     <meta name="keywords" content="キーワード１,キーワード２">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <meta name="robots" content="noindex">
@@ -22,7 +25,7 @@
     <meta property="og:locale" content="ja_JP">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@hiroki_ge8mt">
-    </html>
+    <!-- </html> -->
   </head>
   <body>
     <div id="container">
@@ -33,13 +36,15 @@
             <a href="#" class="navi__btn title">My Portfolio</a>
 
             <!-- <input type="checkbox" id="hamburger"> -->
-            <label for="hamburger">
+            <!-- <label for="hamburger">
               <span class="hamburger__icon">
                 <i></i>
                 <i></i>
                 <i></i>
               </span>
-            </label>
+            </label> -->
+
+
 
             <div id="navi__content">
               <nav class="header__navi">
@@ -59,9 +64,33 @@
                 </ul>
               </nav>
             </div>
+
           </div>
         </div>
+
+            <!-- ハンバーガーボタン（三本線） -->
+            <button class="hamburger" id="hamburgerBtn" aria-label="メニューを開く">
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+            </button>
       </header>
+
+      <!-- ナビゲーションメニュー -->
+      <!-- <nav class="nav-menu" id="navMenu">
+        <ul>
+          <li><a href="#">ホーム</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">サービス</a></li>
+          <li><a href="#">お問い合わせ</a></li>
+        </ul>
+      </nav> -->
+
+      <!-- オーバーレイ（メニュー外クリックで閉じる用） -->
+      <div class="overlay" id="overlay"></div>
+
+
+
 
       <section id="main">
         <div id="top-slide">
@@ -169,7 +198,7 @@
             <table>
               <tr>
                 <td>
-                  <label for="neme">お名前</label>
+                  <label for="name">お名前</label>
                 </td>
                 <td>
                   <input type="text" name="name" id="name" placeholder="奈良  太郎">
@@ -238,7 +267,12 @@
     </footer>
 
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/slick.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/slick.min.js"></script> -->
+
+
+      <!-- ===== jQueryの読み込み（</body>の直前に書く） ===== -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="main.js"></script>
   </body>
 </html>
