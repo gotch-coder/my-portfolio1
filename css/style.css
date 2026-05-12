@@ -142,6 +142,98 @@ h2::after {
   gap: 30px;
 }
 
+/* ハンバーガーメニュー（3本線の見た目） */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  /* display: flex; */
+  gap: 5px;
+}
+@media  screen and (max-width: 767px) {
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* 三本線 */
+.bar {
+  display: block;
+  width: 26px;
+  height: 3px;
+  background: #fff;
+  border-radius: 3px;
+  /* アニメーションの準備 */
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* ボタンへの変化アニメーション（cssで制御）  */
+.hamburger.is-open .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.hamburger.is-open .bar:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.is-open .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ナビゲーションメニュー（最初は非表示） */
+.nav-menu {
+  position: fixed;
+  top: 60px;
+  right: 0;
+  width: 260px;
+  height: 100%;
+  background: #16213e;
+  padding: 32px 0;
+  z-index: 99;
+  /* 最初は右に隠す */
+  transform: translateX(100%);
+  transition: transform 0.35s ease;
+}
+
+/* メニューが開いた状態 */
+.nav-menu.is-open {
+  transform: translateX(0);
+}
+.nav-menu ul {
+  list-style: none;
+}
+.nav-menu ul li a {
+  display: block;
+  padding: 16px 32px;
+  color: #eee;
+  text-decoration: none;
+  font-size: 16px;
+  letter-spacing: 1px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  transition: background 0.2s, color 0.2s;
+}
+.nav-menu ul li a:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #e94560;
+}
+
+/* オーバーレイ（背景を暗くする）  */
+.overlay {
+  display: none;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 98;
+}
+.overlay.is-open {
+  display: block;
+}
+
+
 /* topセクション全体のスタイルを設定する */
 #main {
   width: 100%;
@@ -551,11 +643,11 @@ h2::after {
   }
 
   /* Aboutセクション */
-  
+
   #about h2 {
     margin-bottom: 50px;
   }
-  
+
   .about__flex {
     flex-direction: column;
     align-items: center;
