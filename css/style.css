@@ -184,7 +184,8 @@ h2::after {
 /* ナビゲーションメニュー（最初は非表示） */
 .nav-menu {
   position: fixed;
-  top: 60px;
+  /* top: 60px; */
+  top: var(--header-height);
   right: 0;
   width: 260px;
   height: 100%;
@@ -201,11 +202,19 @@ h2::after {
   transform: translateX(0);
 }
 .nav-menu ul {
-  list-style: none;
+  /* height: 100%; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+  padding-top: 80px;
+  /* text-align: center; */
+  /* list-style: none; */
 }
 .nav-menu ul li a {
   display: block;
   padding: 16px 32px;
+  text-align: center;
   color: #eee;
   text-decoration: none;
   font-size: 16px;
@@ -222,15 +231,47 @@ h2::after {
 .overlay {
   display: none;
   position: fixed;
-  top: 60px;
+  /* top: 60px; */
+  top: var(--header-height);
   left: 0;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
   z-index: 98;
 }
+@media screen and (min-width: 768px) {
+  .nav-menu,
+  .overlay {
+    display: none !important;
+  }
+}
 .overlay.is-open {
   display: block;
+}
+
+/* 最初の状態 */
+.fadeIn {
+  opacity: 0;
+  /* transform: translateY(40px); */
+  transform: translateY(80px);
+  /* transition: opacity 1s ease, transform 1s ease; */
+  transition: all 0.6s;
+}
+
+/* フェイドイン */
+.fadeIn.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 表示された状態 */
+/* .fadeIn {
+  opacity: 1;
+  transform: translateY(0);
+} */
+/* メニュー表示中はスクロール禁止 */
+body.is-fixed{
+  overflow: hidden;
 }
 
 
@@ -345,9 +386,12 @@ h2::after {
   width: 100px;
   min-width: 150px;
   margin-bottom: 22px;
+  transition: transform .4s ease,
+              opacity .4s ease;
 }
 .service__content img:hover {
   opacity: 0.7;
+  transform: translateY(-4px);
 }
 .service__content p {
   line-height: 25px;
@@ -378,6 +422,12 @@ h2::after {
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform .5s ease, opacity .5s ease;
+}
+/* hover強化 */
+.work__content img:hover {
+  transform: scale(1.03);
+  opacity: 0.8;
 }
 .work__content p {
   line-height: 25px;
@@ -459,7 +509,7 @@ h2::after {
   color: #000;
   background-color: #fff;
   border: 1px solid #000;
-  transform: translateY(-2px);
+  transform: translateY(-4px);
   box-shadow: 0 4px 10px rgba(0, 0, 0, .2);
 }
 
@@ -498,13 +548,28 @@ h2::after {
   font-family: "Anton", sans-serif;
 }
 .footer__nav a {
-  
+  position: relative;
   transition: opacity .4s ease-in-out,
               color .4s ease-in-out;
+}
+/* hover強化 */
+.footer__nav a::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 1px;
+  background: #fff;
+  transition: width .3s ease;
 }
 .footer__nav a:hover {
   color: rgba(255, 255, 255, 0.7);
   opacity: 0.7;
+}
+/* hover強化 */
+.footer__nav a:hover::after {
+  width: 100%;
 }
 .footer__nav ul {
   display: flex;
@@ -536,7 +601,7 @@ h2::after {
 }
 .sns__area a:hover {
   opacity: 0.7;
-  transform: translateY(-2px);
+  transform: translateY(-3px) scale(1.1);
 }
 .sns__area img{
   width: 32px;
