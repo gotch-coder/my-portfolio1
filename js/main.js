@@ -14,6 +14,9 @@ $(function (){
     $btn.toggleClass('is-open');
     $menu.toggleClass('is-open');
     $overlay.toggleClass('is-open');
+
+    // bodyクラスに付与
+    $('body').toggleClass('is-fixed');
   }
 
   // ハンバーガーボタンをクリックしたとき
@@ -30,5 +33,34 @@ $(function (){
   $menu.find('a').on('click', function(){
     toggleMenu();
   });
+
+  // フェイドイン
+  $(window).on('scroll', function(){
+
+    $('.fadeIn').each(function() {
+
+      // 要素の位置
+      // const target =$(this).offset().top;
+      // スクロール量
+      // const scroll = $(this).scrollTop();
+      // 画面高さ
+      // const windowHeight = $(window).height();
+      // 要素が画面に入ったら
+      // if(scroll > target - windowHeight + 100){
+      //   $(this).addClass('show');
+      // }
+
+      const position = $(this).offset().top;
+      const scroll = $(window).scrollTop();
+      const windowHeight = $(window).height();
+
+      if(scroll > position - windowHeight + 100) {
+        $(this).addClass('active');
+      }
+    });
+  });
+
+  // 初回読み込み時にも実行
+  $(window).trigger('scroll');
 
 });
