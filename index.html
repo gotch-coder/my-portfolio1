@@ -11,6 +11,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <meta name="robots" content="noindex">
     <link rel="icon" href="images/PC_icon2.png" type="image/png">
@@ -91,8 +93,11 @@
 
       <section id="main">
         <div id="top-slide">
-          <img src="images/rd8_500_r1.jpg" alt="topslide_1">
-          <img src="images/rd8_500_r2.jpg" alt="topslide_2">
+          <div class="slider">
+            <div><img src="images/rd8_500_r1.jpg" alt="topslide_1"></div>
+            <div><img src="images/rd8_500_r2.jpg" alt="topslide_2"></div>
+            <div><img src="images/rd8_500_r3.jpg" alt="topslide_3"></div>
+          </div>
         </div>
 
         <!-- <div class="slide-container">
@@ -109,6 +114,7 @@
             <img class="slide" src="images/rd8_500_r2.jpg" alt="2枚目">
           </div> -->
         <!-- </div> -->
+
 
         <h1>Hello, World!</h1>
       </section>
@@ -270,6 +276,8 @@
 
       <!-- ===== jQueryの読み込み（</body>の直前に書く） ===== -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>

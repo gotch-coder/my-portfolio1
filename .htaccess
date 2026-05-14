@@ -1,0 +1,5 @@
+
+AuthUserFile "/home/hrkgth5250/hiroki-web2024.com/htpasswd/dev.hiroki-web2024.com/.htpasswd"
+AuthName "Member Site"
+AuthType BASIC
+require valid-user
