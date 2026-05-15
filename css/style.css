@@ -255,7 +255,8 @@ h2::after {
   /* transform: translateY(40px); */
   transform: translateY(80px);
   /* transition: opacity 1s ease, transform 1s ease; */
-  transition: all 0.6s;
+  transition: opacity .6s ease,
+              transform .6s ease;
 }
 
 /* フェイドイン */
@@ -272,6 +273,47 @@ h2::after {
 /* メニュー表示中はスクロール禁止 */
 body.is-fixed{
   overflow: hidden;
+}
+
+/* ローディング */
+#loading {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 1s ease,
+              visibility 1s ease;
+}
+
+#loading.fade {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loading__text {
+  color: #fff;
+  font-size: 32px;
+  letter-spacing: .1em;
+  /* 文字をフェイドイン */
+  opacity: 0;
+  animation: loadingFade 2s forwards;
+}
+
+@keyframes loadingFade {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+    filter: blur(8px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
 }
 
 
