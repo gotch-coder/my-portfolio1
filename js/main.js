@@ -117,5 +117,16 @@ $(function (){
     });
   });
 
+    // ローディング
+    $(window).on('load', function() {
+
+      // console.log('loading OK');
+
+      setTimeout(function() {
+        $('#loading').addClass('fade');
+      }, 1000);
+    });
+
+
 
 
