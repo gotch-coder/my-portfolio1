@@ -149,7 +149,6 @@ h2::after {
   border: none;
   cursor: pointer;
   padding: 8px;
-  /* display: flex; */
   gap: 5px;
 }
 @media  screen and (max-width: 767px) {
@@ -184,7 +183,6 @@ h2::after {
 /* ナビゲーションメニュー（最初は非表示） */
 .nav-menu {
   position: fixed;
-  /* top: 60px; */
   top: var(--header-height);
   right: 0;
   width: 260px;
@@ -202,14 +200,11 @@ h2::after {
   transform: translateX(0);
 }
 .nav-menu ul {
-  /* height: 100%; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 30px;
   padding-top: 80px;
-  /* text-align: center; */
-  /* list-style: none; */
 }
 .nav-menu ul li a {
   display: block;
@@ -231,7 +226,6 @@ h2::after {
 .overlay {
   display: none;
   position: fixed;
-  /* top: 60px; */
   top: var(--header-height);
   left: 0;
   width: 100%;
@@ -252,9 +246,7 @@ h2::after {
 /* 最初の状態 */
 .fadeIn {
   opacity: 0;
-  /* transform: translateY(40px); */
   transform: translateY(80px);
-  /* transition: opacity 1s ease, transform 1s ease; */
   transition: opacity .6s ease,
               transform .6s ease;
 }
@@ -299,14 +291,14 @@ body.is-fixed{
   letter-spacing: .1em;
   /* 文字をフェイドイン */
   opacity: 0;
-  animation: loadingFade 2s forwards;
+  animation: loadingFade 3.5s ease forwards;
 }
 
 @keyframes loadingFade {
   0% {
     opacity: 0;
-    transform: translateY(10px);
-    filter: blur(8px);
+    transform: translateY(20px);
+    filter: blur(10px);
   }
 
   100% {
@@ -314,6 +306,21 @@ body.is-fixed{
     transform: translateY(0);
     filter: blur(0);
   }
+}
+
+/* 文字をふわっと出す */
+/* 最初 */
+.fadeup {
+  opacity: 0;
+  transform: translateY(30px) scale(.95);
+  transition: opacity 3s ease,
+              transform 3s ease;
+}
+
+/* 表示後 */
+.fadeup.is-show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
 }
 
 
@@ -342,7 +349,6 @@ body.is-fixed{
 #top-slide {
   position: relative;
   width: 100%;
-  /* height: 100vh; */
   height: 550px;
   overflow: hidden;
 }
@@ -371,30 +377,6 @@ body.is-fixed{
   display: block;
 }
 
-/* #top-slide img {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity 1.5s ease-in-out;
-} */
-
-/* 表示中の画像 */
-/* #top-slide img.active {
-  opacity: 1;
-} */
-
-/* タイトル */
-#main h1 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #fff;
-  font-size: 6rem;
-  z-index: 10;
-}
 
 
 @keyframes slide-flow {
@@ -402,22 +384,27 @@ body.is-fixed{
   100% {transform: translateX(-100%);}
 }
 
+/* タイトル */
 /* 画像の中央に表示する文字のスタイルを設定する */
-#main h1 {
-  font-size: 100px;
-  white-space: nowrap;
-  color: #fff;
+.fv__content {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translateY(-50%) translateX(-50%);
-  -webkit-transform: translateY(-50%) translateX(-50%);
-  z-index: 99;
-  font-family: "Anton", sans-serif;
-  /* font-family: fantasy; */
-  font-size: 3rem;
-  font-weight: bold;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  text-align: center;
 }
+
+#main h1 {
+  white-space: nowrap;
+  color: #fff;
+  font-family: "Anton", sans-serif;
+  font-size: 6rem;
+  font-weight: bold;
+  z-index: 99;
+}
+
+
 /* Aboutセクションのスタイルを設定する */
 #about h2 {
   margin-bottom: 70px;

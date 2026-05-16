@@ -120,12 +120,29 @@ $(function (){
     // ローディング
     $(window).on('load', function() {
 
-      // console.log('loading OK');
-
       setTimeout(function() {
+
         $('#loading').addClass('fade');
-      }, 1000);
+
+        setTimeout(function(){
+
+          $('.fadeup').addClass('is-show');
+        }, 500);
+
+      }, 4000);
+
     });
+
+    // 文字をふわっと出す
+    // $(window).on('load', function() {
+      // ローディングを消す
+      // $('#loading').fadeOut(500);
+
+      // 少し遅らせて文字表示
+      // setTimeout(function(){
+        // $('.fadeup').addClass('is-show');
+      // }, 600);
+    // });
 
 
 
