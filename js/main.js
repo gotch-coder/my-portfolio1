@@ -118,31 +118,24 @@ $(function (){
   });
 
     // ローディング
+
     $(window).on('load', function() {
+
+      // $('body').removeClass('loading');
 
       setTimeout(function() {
 
-        $('#loading').addClass('fade');
+        // loadingを消す
+        $('#loading').addClass('fadeout');
 
-        setTimeout(function(){
+        // main visual表示
+        $('#main').addClass('show');
 
-          $('.fadeup').addClass('is-show');
-        }, 500);
-
-      }, 4000);
-
+        // スクロール解除
+        $('body').removeClass('loading');
+      }, 2500);
     });
 
-    // 文字をふわっと出す
-    // $(window).on('load', function() {
-      // ローディングを消す
-      // $('#loading').fadeOut(500);
-
-      // 少し遅らせて文字表示
-      // setTimeout(function(){
-        // $('.fadeup').addClass('is-show');
-      // }, 600);
-    // });
 
 
 
