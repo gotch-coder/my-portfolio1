@@ -121,20 +121,38 @@ $(function (){
 
     $(window).on('load', function() {
 
-      // $('body').removeClass('loading');
-
       setTimeout(function() {
 
         // loadingを消す
         $('#loading').addClass('fadeout');
 
         // main visual表示
-        $('#main').addClass('show');
+        setTimeout(function(){
+          $('#main').addClass('show');
+        }, 800);
+
+        // hello, world!表示
+        setTimeout(function(){
+          $('h1').addClass('show');
+        }, 1300);
+
 
         // スクロール解除
-        $('body').removeClass('loading');
+        setTimeout(function() {
+          $('body').removeClass('loading');
+        }, 1000);
+
       }, 2500);
     });
+
+    $('.loading__title span').each(function(index){
+
+      $(this).css(
+        'transition-delay',
+        `${index * 0.12}s`
+      );
+    });
+
 
 
 
