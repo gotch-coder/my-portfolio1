@@ -104,7 +104,7 @@ $(function (){
     $('.slider').slick({
       autoplay: true,
       autoplaySpeed: 1,
-      speed: 5000,
+      speed: 4000,
       cssEase: 'linear',
       arrows: false,
       dots: false,
@@ -129,7 +129,7 @@ $(function (){
         // main visual表示
         setTimeout(function(){
           $('#main').addClass('show');
-        }, 800);
+        }, 500);
 
         // hello, world!表示
         setTimeout(function(){

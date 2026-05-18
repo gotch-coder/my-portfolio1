@@ -501,6 +501,64 @@ body.loading {
   }
 }
 
+/* FV用overlay */
+.fv-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, .4);
+  z-index: 1;
+}
+
+/* scroll誘導 */
+.scroll-indicator {
+  position: absolute;
+  left: 50%;
+  bottom: 30px;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.scroll-indicator span {
+  position: relative;
+  display: inline-block;
+  color: #fff;
+  font-size: 1.2rem;
+  letter-spacing: .2em;
+}
+
+/* 縦線 */
+.scroll-indicator span::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 28px;
+  transform: translateX(-50%);
+
+  width: 1px;
+  height: 50px;
+  background: #fff;
+
+  animation: scrollLine 1.8s ease-in-out infinite;
+}
+
+/* アニメーション */
+
+@keyframes scrollLine {
+  0% {
+    transform: translateX(-50%) translateY(0);
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(-50%) translateY(15px);
+    opacity: 0;
+  }
+}
+
 
 #main h1 {
   white-space: nowrap;
@@ -618,17 +676,246 @@ body.loading {
   margin: -10px 10px 0;
 }
 
-/* Workコンテンツ */
+
+
+/* ===============================
+works
+=============================== */
+
 .work__list {
-  font-size: 15px;
-  text-align: center;
+  /* font-size: 15px; */
+  /* text-align: center; */
   display: flex;
   justify-content: space-between;
+  gap: 30px;
+  margin-top: 60px;
 }
 .work__content {
-  width: 100%;
+  width: calc((100% - 90px) / 4);
 }
-.work__content a {
+
+/* =====================================
+カード全体
+===================================== */
+
+.work-card {
+  display: block;
+  text-decoration: none;
+  background: #333;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+
+  transition: transform 0.3s,
+              box-shadow 0.3s;
+}
+
+.work-card:hover {
+  transform: translateY(-8px);
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, .15);
+}
+
+/* ==============================
+画像
+============================== */
+
+.work-card__img {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.work-card__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  transition: transform 0.5s;
+}
+
+.work-card:hover img {
+  transform: scale(1.08);
+}
+
+/* =================================
+テキスト部分
+================================= */
+
+.work-card__body {
+  padding: 20px;
+  background: #fff;
+}
+
+.work-card__body h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.work-card__body p {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+/* ====================================
+ボタン風
+==================================== */
+
+.work-card__btn {
+  display: inline-block;
+
+  font-size: 13px;
+  font-weight: bold;
+
+  border-bottom: 1px solid #333;
+
+  padding-bottom: 3px;
+
+  transition: opacity 0.3s;
+}
+
+.work-card:hover .work-card__btn {
+  opacity: 0.7;
+}
+
+/* ==================================
+sp
+================================== */
+@media screen and (max-width: 768px) {
+
+  .work__list {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .work__content {
+    width: 100%;
+  }
+}
+
+/* =========================
+Works Detail
+========================= */
+
+.detail-mv img {
+  width: 100%;
+  height: 60vh;
+  object-fit: cover;
+}
+
+
+/* 詳細 */
+
+.detail {
+  padding: 100px 0;
+}
+
+.detail h1 {
+  font-size: 40px;
+  margin-bottom: 40px;
+}
+
+.detail-text {
+  line-height: 2;
+  margin-bottom: 60px;
+}
+
+
+/* 情報 */
+
+.detail-info {
+  margin-bottom: 60px;
+}
+
+.detail-info dl {
+  display: flex;
+  border-bottom: 1px solid #ddd;
+  padding: 20px 0;
+}
+
+.detail-info dt {
+  width: 180px;
+  font-weight: bold;
+}
+
+
+/* ギャラリー */
+
+.detail-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+
+  margin-bottom: 80px;
+}
+
+.detail-gallery img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+
+/* 戻る */
+
+.detail-back {
+  text-align: center;
+}
+
+.detail-back a {
+  display: inline-block;
+
+  border: 1px solid #333;
+
+  padding: 15px 50px;
+
+  text-decoration: none;
+  color: #333;
+
+  transition: 0.3s;
+}
+
+.detail-back a:hover {
+  background: #333;
+  color: #fff;
+}
+
+
+/* =========================
+SP
+========================= */
+
+@media screen and (max-width: 768px) {
+
+  .detail {
+    padding: 70px 0;
+  }
+
+  .detail h1 {
+    font-size: 28px;
+  }
+
+  .detail-info dl {
+    display: block;
+  }
+
+  .detail-info dt {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .detail-gallery {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+
+
+
+
+/* .work__content a {
   display: block;
   aspect-ratio: 4 / 3;
   overflow: hidden;
@@ -643,9 +930,11 @@ body.loading {
   object-fit: cover;
   display: block;
   transition: transform .5s ease, opacity .5s ease;
-}
+} */
+
+
 /* hover強化 */
-.work__content img:hover {
+/* .work__content img:hover {
   transform: scale(1.03);
   opacity: 0.8;
 }
@@ -653,9 +942,8 @@ body.loading {
   line-height: 25px;
   margin: 20px 10px;
   font-family: "Noto Sans JP", sans-serif;
-  /* font-family: "Pacifico", cursive; */
   font-size: 20px;
-}
+} */
 
 /* contactフォームコンテンツ */
 .contact__form {
