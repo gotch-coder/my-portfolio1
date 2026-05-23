@@ -4,7 +4,7 @@ $(function (){
 
   // 使う要素を変数にまとめる
   const $btn     = $('#hamburgerBtn');/* ハンバーガーメニュー */
-  const $menu    = $('#navMenu');/* ナビゲーションメニュー */
+  const $menu    = $('#navi__content');/* ナビゲーションメニュー */
   const $overlay = $('#overlay');/* 背景オーバーレイ */
 
 
@@ -21,7 +21,10 @@ $(function (){
 
   // ハンバーガーボタンをクリックしたとき
   $btn.on('click', function(){
-    toggleMenu();
+    // ハンバーガーメニュー自体をsp限定
+    if (window.innerWidth <= 767) {
+      toggleMenu();
+    }
   });
 
   // オーバーレイ（メニュー例）をクリックしたとき→閉じる
@@ -31,7 +34,10 @@ $(function (){
 
   // メニューのリンクをクリックしたとき→閉じる
   $menu.find('a').on('click', function(){
-    toggleMenu();
+    // スマホ時だけ閉じる
+    if (window.innerWidth <= 767) {
+      toggleMenu();
+    }
   });
 
   // フェイドイン
