@@ -65,12 +65,18 @@
 
   <section id="about" class="section fadeIn">
     <div class="inner">
-      <h2>About</h2>
+
+      <div class="section-title">
+        <h2>About</h2>
+      </div>
+
       <div class="about__flex">
+
         <div class="about__img">
           <img src="images/240316180731150.jpg" class="sp_none" alt="about_img">
           <img src="images/240316180731150.jpg" class="pc_none" alt="about_img">
         </div>
+
         <div class="about__textarea">
           <p>Hiroki Gotoh / <br>1978年生まれ。<br>大学卒業後、協同組合、工場勤務、商社勤務を経て、<br>2024年3月、
             Web制作の道へ。<br>
@@ -78,14 +84,17 @@
             応えてまいります。よろしくお願いいたします。
           </p>
         </div>
+
       </div>
     </div>
   </section>
 
   <section id="service" class="section bg-gray fadeIn">
     <div class="inner">
-      <h2>Service</h2>
-      <p class="summary">サービス一覧</p>
+      <div class="section-title">
+        <h2>Service</h2>
+        <p>サービス一覧</p>
+      </div>
       <div class="service__list">
         <div class="service__content">
           <img src="images/HTML_CSS.svg" alt="html&css">
@@ -105,91 +114,93 @@
 
   <section id="works" class="section fadeIn">
     <div class="inner">
-      <h2>Works</h2>
-      <p class="summary">サービスご利用者様HP一覧</p>
+
+      <div class="section-title">
+        <h2>Works</h2>
+        <p>サービスご利用者様HP一覧</p>
+      </div>
+
       <div class="work__list">
 
         <!-- 1 -->
-        <div class="work__content">
-          <a href="detail.php" class="work-card">
-            <div class="work-card__img">
-              <img src="images/hotel_01.jpg" alt="〇〇旅館">
-            </div>
+        <div class="work-card">
 
-            <div class="work-card__body">
-              <h3>〇〇旅館 様</h3>
-              <p>HTML / CSS / JQuery</p>
+          <div class="work-card__img">
+            <img src="images/hotel_01.jpg" alt="〇〇旅館">
+          </div>
 
-              <span class="work-card__btn">
-                View More
-              </span>
-            </div>
-          </a>
+          <div class="work-card__body">
+            <h3>〇〇旅館 様</h3>
+            <p>HTML / CSS / JQuery</p>
+
+            <a href="detail.php" class="btn">
+              View More
+            </a>
+          </div>
         </div>
 
         <!-- 2 -->
-        <div class="work__content">
-          <a href="detail.php" class="work-card">
+        <div class="work-card">
 
-            <div class="work-card__img">
-              <img src="images/TKL_R6_8741_TP_V4.jpg" alt="〇〇農園">
-            </div>
+          <div class="work-card__img">
+            <img src="images/TKL_R6_8741_TP_V4.jpg" alt="〇〇農園">
+          </div>
 
-            <div class="work-card__body">
-              <h3>〇〇農園 様</h3>
-              <p>HTML / CSS / JQuery</p>
+          <div class="work-card__body">
+            <h3>〇〇農園 様</h3>
+            <p>HTML / CSS / JQuery</p>
 
-              <span class="work-card__btn">
-                View More
-              </span>
-            </div>
-          </a>
+            <a href="detail.php" class="btn">
+              View More
+            </a>
+          </div>
         </div>
 
         <!-- 3 -->
-        <div class="work__content">
-          <a href="detail.php" class="work-card">
-            <div class="work-card__img">
-              <img src="images/office_01.jpg" alt="〇〇株式会社">
-            </div>
+        <div class="work-card">
 
-            <div class="work-card__body">
-              <h3>〇〇株式会社 様</h3>
-              <p>HTML / CSS / JQuery</p>
+          <div class="work-card__img">
+            <img src="images/office_01.jpg" alt="〇〇株式会社">
+          </div>
 
-              <span class="work-card__btn">
-                View More
-              </span>
-            </div>
-          </a>
+          <div class="work-card__body">
+            <h3>〇〇株式会社 様</h3>
+            <p>HTML / CSS / JQuery</p>
+
+            <a href="detail.php" class="btn">
+              View More
+            </a>
+          </div>
         </div>
 
+
         <!-- 4 -->
-        <div class="work__content">
-          <a href="detail.php" class="work-card">
-            <div class="work-card__img">
-              <img src="images/carfactory_01.jpg" alt="〇〇自動車工場">
-            </div>
+        <div class="work-card">
 
-            <div class="work-card__body">
-              <h3>〇〇自動車工場 様</h3>
-              <p>HTML / CSS / JQuery</p>
+          <div class="work-card__img">
+            <img src="images/carfactory_01.jpg" alt="〇〇自動車工場">
+          </div>
 
-              <span class="work-card__btn">
-                View More
-              </span>
-            </div>
+          <div class="work-card__body">
+            <h3>〇〇自動車工場 様</h3>
+            <p>HTML / CSS / JQuery</p>
 
-          </a>
+            <a href="detail.php" class="btn">
+              View More
+            </a>
+          </div>
         </div>
 
       </div>
+    </div>
   </section>
 
   <section id="contact" class="section bg-gray fadeIn">
     <div class="inner">
-      <h2>Contact</h2>
-      <p class="summary">お気軽にお問い合わせください。<br>24時間以内に担当者よりご連絡させて頂きます。</p>
+      <div class="section-title">
+        <h2>Contact</h2>
+      </div>
+      <p>お気軽にお問い合わせください。<br>24時間以内に担当者よりご連絡させて頂きます。</p>
       <div class="contact__form">
         <form>
           <table>
@@ -219,7 +230,7 @@
             </tr>
           </table>
           <div class="btn__submit">
-            <input type="submit" value="送  信">
+            <input type="submit" value="送  信" class="btn">
           </div>
         </form>
       </div>
