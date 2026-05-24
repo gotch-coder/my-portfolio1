@@ -55,7 +55,7 @@
 
       <!-- 戻る -->
       <div class="detail-back">
-        <a href="index.php">Back</a>
+        <a href="index.php" class="btn">Back</a>
       </div>
 
     </div>
