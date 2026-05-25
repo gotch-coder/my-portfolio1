@@ -200,38 +200,31 @@
       <div class="section-title">
         <h2>Contact</h2>
       </div>
-      <p>お気軽にお問い合わせください。<br>24時間以内に担当者よりご連絡させて頂きます。</p>
+      <p class="summary">
+        お気軽にお問い合わせください。<br>24時間以内に担当者よりご連絡させて頂きます。
+      </p>
       <div class="contact__form">
-        <form>
-          <table>
-            <tr>
-              <td>
-                <label for="name">お名前</label>
-              </td>
-              <td>
-                <input type="text" name="name" id="name" placeholder="奈良  太郎">
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label for="mail">メールアドレス</label>
-              </td>
-              <td>
-                <input type="email" name="mail" id="mail" placeholder="sample@sample.com">
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label for="content">メッセージ</label>
-              </td>
-              <td>
-                <textarea name="content" id="content" placeholder="質問です。"></textarea>
-              </td>
-            </tr>
-          </table>
-          <div class="btn__submit">
-            <input type="submit" value="送  信" class="btn">
+        <form action="confirm.php" method="post">
+
+          <div class="form-group">
+            <label for="name">お名前</label>
+            <input type="text" id="name" name="name" required>
           </div>
+
+          <div class="form-group">
+            <label for="email">メールアドレス</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="message">お問い合わせ内容</label>
+            <textarea id="message" name="message" rows="6" required></textarea>
+          </div>
+
+          <button type="submit" class="contact__btn">
+            送信画面へ
+          </button>
+
         </form>
       </div>
     </div>
