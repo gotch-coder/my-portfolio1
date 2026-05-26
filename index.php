@@ -197,28 +197,49 @@
 
   <section id="contact" class="section bg-gray fadeIn">
     <div class="inner">
+
       <div class="section-title">
         <h2>Contact</h2>
       </div>
+
       <p class="summary">
         お気軽にお問い合わせください。<br>24時間以内に担当者よりご連絡させて頂きます。
       </p>
+
       <div class="contact__form">
         <form action="confirm.php" method="post">
 
+          <!-- お名前 -->
           <div class="form-group">
             <label for="name">お名前</label>
-            <input type="text" id="name" name="name" required>
+
+            <input type="text" name="name" value="<?php echo htmlspecialchars($_POST['name'] ?? '', ENT_QUOTES); ?>">
+
+
+            <!-- <input type="text" id="name" name="name" required> -->
           </div>
 
+          <!-- <input type="email" name="email" value="<?php echo htmlspecialchars($_POST['email'] ?? '', ENT_QUOTES); ?>"> -->
+
+          <!-- メール -->
           <div class="form-group">
             <label for="email">メールアドレス</label>
-            <input type="email" id="email" name="email" required>
+
+            <input type="email" id="email" name="email" required
+              value="<?php echo htmlspecialchars($_POST['email'] ?? '', ENT_QUOTES); ?>">
+            <!-- <input type="email" id="email" name="email" required> -->
+
           </div>
 
+
+          <!-- お問い合わせ内容 -->
           <div class="form-group">
             <label for="message">お問い合わせ内容</label>
-            <textarea id="message" name="message" rows="6" required></textarea>
+
+            <textarea name="message"><?php
+            echo htmlspecialchars($_POST['message'] ?? '', ENT_QUOTES);
+          ?></textarea>
+            <!-- <textarea id="message" name="message" rows="6" required></textarea> -->
           </div>
 
           <button type="submit" class="contact__btn">
