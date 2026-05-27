@@ -1,3 +1,15 @@
+<?php
+session_start();
+
+// 正規アクセスでなければ戻す
+if (!isset($_SESSION['send'])) {
+  header('Location: index.php');
+  exit;
+}
+
+// セッション削除
+unset($_SESSION['send']);
+?>
 <!DOCTYPE html>
 <html lang="ja">
 

@@ -8,9 +8,9 @@ if (!isset($_POST['send'])) {
 }
 
 // フォーム内容取得
-$name = htmlspecialchars($_POST['name'], ENT_QUOTES, 'UTF-8');
-$email = htmlspecialchars($_POST['email'], ENT_QUOTES, 'UTF-8');
-$message = htmlspecialchars($_POST['message'], ENT_QUOTES, 'UTF-8');
+$name = trim($_POST['name'] ?? '');
+$email = trim($_POST['email'] ?? '');
+$message = trim($_POST['message'] ?? '');
 
 // ================================
 // メール送信設定
@@ -45,8 +45,19 @@ mb_language("Japanese");
 mb_internal_encoding("UTF-8");
 
 // メール送信
-mb_send_mail($to, $subject, $body, $headers);
+$result = mb_send_mail($to, $subject, $body, $headers);
 
-// 完了画面へ移動
-header('Location: thanks.php');
-exit;
+// 送信成功時
+if ($result) {
+
+  $_SESSION['send'] = true;
+
+  header('Location: thanks.php');
+  exit;
+
+} else {
+
+  echo 'メール送信に失敗しました。';
+
+}
+?>
