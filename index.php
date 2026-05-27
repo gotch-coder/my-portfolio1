@@ -1,3 +1,17 @@
+<?php
+session_start();
+
+// CSRFトークン生成
+$token = bin2hex(random_bytes(32));
+$_SESSION['token'] = $token;
+
+// フォームの値保持
+$name = $_POST['name'] ?? '';
+$email = $_POST['email'] ?? '';
+$message = $_POST['message'] ?? '';
+?>
+
+
 <?php include 'header.php'; ?>
 
 <div id="container">
@@ -209,37 +223,30 @@
       <div class="contact__form">
         <form action="confirm.php" method="post">
 
+          <input type="hidden" name="token" value="<?php echo htmlspecialchars($token ?? '', ENT_QUOTES, 'UTF-8'); ?>">
+
           <!-- お名前 -->
           <div class="form-group">
             <label for="name">お名前</label>
 
-            <input type="text" name="name" value="<?php echo htmlspecialchars($_POST['name'] ?? '', ENT_QUOTES); ?>">
+            <input type="text" name="name" value="<?php echo htmlspecialchars($name ?? '', ENT_QUOTES, 'UTF-8'); ?>">
 
-
-            <!-- <input type="text" id="name" name="name" required> -->
           </div>
-
-          <!-- <input type="email" name="email" value="<?php echo htmlspecialchars($_POST['email'] ?? '', ENT_QUOTES); ?>"> -->
 
           <!-- メール -->
           <div class="form-group">
             <label for="email">メールアドレス</label>
 
-            <input type="email" id="email" name="email" required
-              value="<?php echo htmlspecialchars($_POST['email'] ?? '', ENT_QUOTES); ?>">
-            <!-- <input type="email" id="email" name="email" required> -->
+            <input type="email" name="email" value="<?php echo htmlspecialchars($email ?? '', ENT_QUOTES); ?>">
 
           </div>
-
 
           <!-- お問い合わせ内容 -->
           <div class="form-group">
             <label for="message">お問い合わせ内容</label>
 
-            <textarea name="message"><?php
-            echo htmlspecialchars($_POST['message'] ?? '', ENT_QUOTES);
-          ?></textarea>
-            <!-- <textarea id="message" name="message" rows="6" required></textarea> -->
+            <textarea name="message"><?php echo htmlspecialchars($message ?? '', ENT_QUOTES); ?></textarea>
+
           </div>
 
           <button type="submit" class="contact__btn">
