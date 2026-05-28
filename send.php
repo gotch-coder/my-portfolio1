@@ -7,10 +7,25 @@ if (!isset($_POST['send'])) {
   exit;
 }
 
-// フォーム内容取得
-$name = trim($_POST['name'] ?? '');
-$email = trim($_POST['email'] ?? '');
-$message = trim($_POST['message'] ?? '');
+// CSRFチェック
+if (
+  !isset($_POST['token']) ||
+  !isset($_SESSION['token']) ||
+  !hash_equals($_SESSION['token'], $_POST['token'])
+) {
+  exit('不正なアクセスです');
+}
+
+// トークン破棄
+unset($_SESSION['token']);
+
+
+// フォーム値取得
+$name = htmlspecialchars($_POST['name'] ?? '', ENT_QUOTES, 'UTF-8');
+$email = htmlspecialchars($_POST['email'] ?? '', ENT_QUOTES, 'UTF-8');
+$message = htmlspecialchars($_POST['message'] ?? '', ENT_QUOTES, 'UTF-8');
+
+
 
 // ================================
 // メール送信設定
@@ -44,13 +59,41 @@ $headers = "From: {$email}";
 mb_language("Japanese");
 mb_internal_encoding("UTF-8");
 
-// メール送信
+// 管理者へ送信
 $result = mb_send_mail($to, $subject, $body, $headers);
 
-// 送信成功時
-if ($result) {
+// 自動返信メール
+$auto_subject = 'お問い合わせありがとうございます';
+
+$auto_body = <<<EOD
+{$name} 様
+
+お問い合わせありがとうございます。
+以下の内容で受け付けました。
+
+【お問い合わせ内容】
+{$message}
+
+EOD;
+
+$auto_headers = "From: あなたのメールアドレス";
+
+// 自動返信送信
+$auto_result = mb_send_mail(
+  $email,
+  $auto_subject,
+  $auto_body,
+  $auto_headers
+);
+
+
+// 両方成功した場合
+if ($result && $auto_result) {
 
   $_SESSION['send'] = true;
+
+  // CSRFトークン削除
+  unset($_SESSION['token']);
 
   header('Location: thanks.php');
   exit;
@@ -60,4 +103,3 @@ if ($result) {
   echo 'メール送信に失敗しました。';
 
 }
-?>

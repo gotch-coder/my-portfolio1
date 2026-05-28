@@ -12,6 +12,7 @@ body {
   font-style: normal;
   color: #000;
   font-size: 10px;
+  line-height: 1.8;
   padding-top: var(--header-height);
 }
 
@@ -20,16 +21,26 @@ h1,h2,h3,h4,p,ul,a {
   padding: 0;
 }
 
+a {
+  transition: 0.3s;
+}
+
+a hover {
+  opacity: 0.7;
+}
+
 ul,ol {
   list-style: none;
 }
 .section {
-  padding: 70px 0;
+  padding: 80px 0;
 }
 
 #container {
-  font-size: 18px;
+  max-width: 1100px;
+  margin: 0 auto;
 }
+
 .inner {
   width: min(100%, 1100px);
   margin: 0 auto;
@@ -77,7 +88,7 @@ h2::after {
 }
 @media screen and (max-width: 768px) {
   :root {
-    --header-height: 65px;
+    --header-height: 70px;
   }
 }
 #about,
@@ -312,6 +323,8 @@ sp
   justify-content: center;
   gap: 30px;
   padding-top: 80px;
+  text-align: center;
+  }
 }
   .nav-menu.is-open {
     right: 0;
@@ -653,7 +666,7 @@ body.loading {
   white-space: nowrap;
   color: #fff;
   font-family: "Anton", sans-serif;
-  font-size: clamp(40px, 6vw, 80px);
+  font-size: clamp(40px, 8vw, 80px);
   font-weight: bold;
   z-index: 99;
 }
@@ -693,7 +706,7 @@ section title
 }
 
 .section-title h2 {
-  font-size: clamp(32px, 5vw, 48px);
+  font-size: clamp(32px, 8vw, 48px);
   font-weight: 700;
   line-height: 1.2;
   color: #222;
@@ -710,7 +723,7 @@ section title
 
 .section-title p {
   margin-top: 18px;
-  font-size: 14px;
+  font-size: 25px;
   color: #777;
   line-height: 1.8;
 }
@@ -756,7 +769,7 @@ Aboutセクションのスタイルを設定する
 .about__textarea p {
   /* font-family: "Pacifico", cursive; */
    font-family: "Noto Sans JP", sans-serif;
-  font-size: 22px;
+  font-size: 23px;
   line-height: 2.0;
 }
 .about__img {
@@ -787,8 +800,8 @@ Aboutセクションのスタイルを設定する
   margin-right: 80px;
 }
 .service__content img {
-  width: 100px;
-  min-width: 150px;
+  width: 100%;
+  /* max-width: 150px; */
   margin-bottom: 22px;
   transition: transform .4s ease,
               opacity .4s ease;
@@ -882,12 +895,12 @@ works
 .work-card__body {
   display: flex;
   flex-direction: column;
-  padding: 24px;
+  padding: 24px 24px 70px;
   background: #fff;
 }
 
 .work-card__body h3 {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 700;
   margin-bottom: 12px;
   color: #222;
@@ -896,7 +909,7 @@ works
 }
 
 .work-card__body p {
-  font-size: 14px;
+  font-size: 17px;
   line-height: 1.8;
   color: #777;
   margin-bottom: 24px;
@@ -930,7 +943,19 @@ sp
 
   .work__list {
     grid-template-columns: 1fr;
-    gap: 25px;
+    gap: 35px;
+  }
+
+  .work-card__body p {
+    margin: 0 auto;
+  }
+
+  .work-card__body h3 {
+    margin: 0 auto;
+  }
+
+  .work-card__body {
+    padding: 24px 24px 50px;
   }
 
 }
@@ -1140,14 +1165,20 @@ btn
   color: #fff;
 
   text-decoration: none;
-  font-size: 16px;
+  font-size: 17px;
   transition: 0.3s;
 
   appearance: none;
 }
 
 .btn:hover {
-  opacity: 0.7;
+  opacity: 0.5;
+}
+
+@media screen and (max-width: 768px) {
+  .btn {
+    padding: 18px 32px;
+  }
 }
 
 
@@ -1182,6 +1213,7 @@ contactフォームコンテンツ
 
   background: #333;
   color: #fff;
+  padding: 16px 48px;
 
   font-size: 16px;
   cursor: pointer;
@@ -1193,6 +1225,8 @@ contactフォームコンテンツ
 
 .contact__btn:hover {
   opacity: 0.7;
+  background: #555;
+  transform: translateY(-3px);
 }
 
 
@@ -1204,7 +1238,7 @@ contactフォームコンテンツ
   margin-bottom: 42px;
   text-align: center;
   line-height: 1.8;
-  font-size: 18px;
+  font-size: 25px;
 }
 .contact__form label {
   font-weight: 500;
@@ -1262,7 +1296,7 @@ footer
   background: #333;
 }
 .footer__box {
-  padding: 30px 70px;
+  padding: 40px 0;
   position: relative;
   text-align: center;
   border-top: 1px solid #333;
@@ -1356,7 +1390,11 @@ footer
 .sns__area a:not(:last-of-type) {
   margin-right: 6px;
 }
-/* レスポンシブ表示 */
+
+/* ============================
+レスポンシブ表示
+============================ */
+
 @media screen and (min-width:768px) {
   .pc_none{
     display: none!important;
@@ -1383,11 +1421,12 @@ footer
 
   /* 各セクションのスタイルを設定する  */
   .section {
-  padding: 70px 0;
+  padding: 80px 0;
   }
 
-  /* Aboutセクション */
-
+  /* ============================
+  Aboutセクション
+  ============================= */
 
   .about__flex {
     flex-direction: column;
@@ -1399,9 +1438,23 @@ footer
     max-width: 100%;
   }
 
-/* ===========================
-  Contactセクション
-=========================== */
+  /* ================================
+  Serviceセクション
+  =============================== */
+ .service__list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service__content:not(:last-of-type) {
+    margin-right: 0;
+    margin-bottom: 48px;
+  }
+
+
+  /* ===========================
+    Contactセクション
+  =========================== */
 
 
   #contact h2 {
@@ -1410,7 +1463,7 @@ footer
 
   #contact .summary {
     margin-bottom: 50px;
-    font-size: 16px;
+    font-size: 20px;
   }
 
   .contact__form table,
@@ -1519,13 +1572,15 @@ confirm
   .footer__nav ul {
     flex-wrap: wrap;
     display: flex;
+    justify-content: center;
     padding: 0;
     margin: 0;
     gap: 0;
   }
   .footer__nav li {
-    width: 50%;
-    margin-bottom: 12px;
+    width: 100%;
+    text-align: center;
+    /* margin-bottom: 12px; */
   }
   .footer__nav li:not(:last-of-type) {
     margin-right: 0;
@@ -1581,7 +1636,7 @@ and (max-width:1024px)
     align-items: center;
   }
   #contact {
-    padding: 70px 100px 70px;
+    padding: 70px 0;
   }
   .contact__form table td {
     width: 100%!important;
