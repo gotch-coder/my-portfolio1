@@ -5,9 +5,9 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio</title>
+  <title>hiroki | Web制作portfolio</title>
   <meta name="description" content="Web制作始めました。皆様のご要望に応えてまいります。お気軽にお問い合わせください。">
-  <meta name="keywords" content="キーワード１,キーワード２">
+  <meta name="keywords" content="Web制作, ポートフォリオ, HTML, CSS, PHP">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
@@ -23,7 +23,7 @@
   <meta property="og:title" content="Hello My Portfolio">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://www.hiroki-web2024.com/images/240316180731150.JPG">
-  <meta property="og:url" content="サイトのURL">
+  <meta property="og:url" content="https://www.dev.hiroki-web2024.com/site-1">
   <meta property="og:description" content="Web制作始めました。皆様のご要望に応えてまいります。">
   <meta property="og:site_name" content="Hello My Portfolio">
   <meta property="og:locale" content="ja_JP">
