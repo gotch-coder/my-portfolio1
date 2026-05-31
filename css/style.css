@@ -37,7 +37,7 @@ ul,ol {
 }
 
 #container {
-  max-width: 1100px;
+  /* max-width: 1100px; */
   margin: 0 auto;
 }
 
@@ -343,7 +343,7 @@ sp
   .overlay.is-open {
     display: block;
   }
-}
+
 
 /* 最初の状態 */
 .fadeIn {
@@ -706,7 +706,7 @@ section title
 }
 
 .section-title h2 {
-  font-size: clamp(32px, 8vw, 48px);
+  font-size: clamp(32px, 10vw, 65px);
   font-weight: 700;
   line-height: 1.2;
   color: #222;
@@ -723,7 +723,7 @@ section title
 
 .section-title p {
   margin-top: 18px;
-  font-size: 25px;
+  font-size: 30px;
   color: #777;
   line-height: 1.8;
 }
@@ -787,7 +787,7 @@ Aboutセクションのスタイルを設定する
 .service__list {
   width: 100%;
   margin: 0 auto;
-  font-size: 20px;
+  font-size: 25px;
   text-align: center;
   display: flex;
   justify-content: space-between;
@@ -909,7 +909,7 @@ works
 }
 
 .work-card__body p {
-  font-size: 17px;
+  font-size: 20px;
   line-height: 1.8;
   color: #777;
   margin-bottom: 24px;
@@ -947,7 +947,7 @@ sp
   }
 
   .work-card__body p {
-    margin: 0 auto;
+    margin: 20px auto;
   }
 
   .work-card__body h3 {
@@ -1155,7 +1155,8 @@ btn
   justify-content: center;
   align-items: center;
 
-  min-width: 220px;
+  max-width: 220px;
+  width: 100%;
   height: 56px;
   padding-inline: 32px;
   border: none;
@@ -1165,7 +1166,7 @@ btn
   color: #fff;
 
   text-decoration: none;
-  font-size: 17px;
+  font-size: 20px;
   transition: 0.3s;
 
   appearance: none;
@@ -1193,7 +1194,7 @@ contactフォームコンテンツ
 .form-group label {
   display: block;
   margin-bottom: 10px;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .contact__form input[type="text"],
@@ -1215,7 +1216,7 @@ contactフォームコンテンツ
   color: #fff;
   padding: 16px 48px;
 
-  font-size: 16px;
+  font-size: 20px;
   cursor: pointer;
   transition: 0.3s;
 
@@ -1448,7 +1449,7 @@ footer
 
   .service__content:not(:last-of-type) {
     margin-right: 0;
-    margin-bottom: 48px;
+    margin-bottom: 70px;
   }
 
 
@@ -1463,7 +1464,7 @@ footer
 
   #contact .summary {
     margin-bottom: 50px;
-    font-size: 20px;
+    font-size: 30px;
   }
 
   .contact__form table,

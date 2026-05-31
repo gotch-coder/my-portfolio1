@@ -7,6 +7,7 @@ $(function (){
   const $menu    = $('#navi__content');/* ナビゲーションメニュー */
   const $overlay = $('#overlay');/* 背景オーバーレイ */
 
+  const isSp = () => window.innerWidth <= 767;
 
   // メニューと開く/閉じる関数
   function toggleMenu(){
@@ -22,8 +23,8 @@ $(function (){
   // ハンバーガーボタンをクリックしたとき
   $btn.on('click', function(){
     // ハンバーガーメニュー自体をsp限定
-    if (window.innerWidth <= 767) {
-      toggleMenu();
+    if (isSp()) {
+    toggleMenu();
     }
   });
 
@@ -35,26 +36,17 @@ $(function (){
   // メニューのリンクをクリックしたとき→閉じる
   $menu.find('a').on('click', function(){
     // スマホ時だけ閉じる
-    if (window.innerWidth <= 767) {
+    if (isSp()) {
       toggleMenu();
     }
   });
 
   // フェイドイン
-  $(window).on('scroll', function(){
-
+  // $(window).on('scroll', function(){
+  function fadeInCheck() {
     $('.fadeIn').each(function() {
 
-      // 要素の位置
-      // const target =$(this).offset().top;
-      // スクロール量
-      // const scroll = $(this).scrollTop();
-      // 画面高さ
-      // const windowHeight = $(window).height();
-      // 要素が画面に入ったら
-      // if(scroll > target - windowHeight + 100){
-      //   $(this).addClass('show');
-      // }
+
 
       const position = $(this).offset().top;
       const scroll = $(window).scrollTop();
@@ -64,52 +56,17 @@ $(function (){
         $(this).addClass('active');
       }
     });
-  });
+  };
 
   // 初回読み込み時にも実行
-  $(window).trigger('scroll');
+  $(window).on('load scroll', fadeInCheck);
+  fadeInCheck(); // 初回実行
 
-  // トップスライド
-  // const slides = document.querySelectorAll('#top-slide img');
 
-  // let current = 0;
-
-  // 最初の画像を表示
-  // slides[current].classList.add('active');
-
-  // setInterval(() => {
-    // 今の画像を消す
-    // slides[current].classList.remove('active');
-    // 次の画像へ
-    // current++;
-    // 最後まで行ったら最初へ戻る
-    // if (current >= slides.length) {
-    //   current = 0;
-    // }
-
-      // 次の画像を表示
-  //   slides[current].classList.add('active');
-
-  // }, 4000);
-
-  // 横スクロール
-  // const wrapper = document.querySelector('.slide-wrapper');
-
-  // let slideIndex = 0;
-
-  // setInterval(() => {
-  //   slideIndex++;
-
-  //   if(slideIndex > 1){
-  //     slideIndex = 0;
-  //   }
-  //   wrapper.style.transform = `translateX(-${slideIndex * 100}%)`;
-  // }, 4000);
-  
   // トップスライド
     $('.slider').slick({
       autoplay: true,
-      autoplaySpeed: 1,
+      autoplaySpeed: 0,
       speed: 4000,
       cssEase: 'linear',
       arrows: false,
@@ -121,8 +78,6 @@ $(function (){
       slidesToScroll: 1
 
     });
-  });
-
     // ローディング
 
     $(window).on('load', function() {
@@ -158,6 +113,7 @@ $(function (){
         `${index * 0.12}s`
       );
     });
+});
 
 
 
