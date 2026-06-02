@@ -89,6 +89,7 @@ $auto_result = mb_send_mail(
 
 // 両方成功した場合
 if ($result && $auto_result) {
+// if (true) {
 
   $_SESSION['send'] = true;
 
