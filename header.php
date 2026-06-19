@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
   <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" /> -->
-  <meta name="robots" content="noindex">
+  <!-- <meta name="robots" content="noindex"> -->
   <link rel="icon" href="images/PC_icon2.png" type="image/png">
   <!-- OGP設定 -->
   <!-- <html prefix="og: http://ogp.me/ns#"> -->
