@@ -88,7 +88,7 @@ h2::after {
 }
 @media screen and (max-width: 768px) {
   :root {
-    --header-height: 70px;
+    --header-height: 80px;
   }
 }
 #about,
@@ -1170,6 +1170,7 @@ btn
   transition: 0.3s;
 
   appearance: none;
+  white-space: nowrap;
 }
 
 .btn:hover {
@@ -1178,7 +1179,10 @@ btn
 
 @media screen and (max-width: 768px) {
   .btn {
+    display: flex;
     padding: 18px 32px;
+    margin: 0 auto;
+    white-space: nowrap;
   }
 }
 

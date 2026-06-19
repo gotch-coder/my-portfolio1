@@ -87,8 +87,10 @@ $message = $_POST['message'] ?? '';
       <div class="about__flex">
 
         <div class="about__img">
-          <img src="images/240316180731150.jpg" class="sp_none" alt="about_img">
-          <img src="images/240316180731150.jpg" class="pc_none" alt="about_img">
+          <!-- <img src="images/240316180731150.jpg" class="sp_none" alt="about_img"> -->
+          <img src="images/about-picture.png" class="sp_none" alt="about_img">
+          <!-- <img src="images/240316180731150.jpg" class="pc_none" alt="about_img"> -->
+          <img src="images/about-picture.png" class="pc_none" alt="about_img">
         </div>
 
         <div class="about__textarea">
